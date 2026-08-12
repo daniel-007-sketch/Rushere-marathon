@@ -1,0 +1,3436 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>RUSHERE | MARATHON</title>
+
+  <meta name="description" content="Private invitation to the CNC consecration and investiture service.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =========================================================
+       GLOBAL VARIABLES
+    ========================================================= */
+
+    :root {
+      --ink: #30251d;
+      --muted: #766a5f;
+      --wine: #641624;
+      --wine-dark: #360711;
+      --gold: #b99455;
+      --cnc-blue: #1794cb;
+      --paper: #fffaf0;
+      --white: #ffffff;
+      --page-background: #e5eedf;
+
+      --ease: cubic-bezier(.22, .8, .24, 1);
+    }
+
+
+    /* =========================================================
+       GLOBAL RESET
+    ========================================================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-tap-highlight-color: transparent;
+      background: var(--page-background);
+    }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      color: var(--ink);
+
+      background: var(--page-background);
+
+      font-family: Anton, Impact, sans-serif;
+    }
+
+    button,
+    input {
+      font: inherit;
+      touch-action: manipulation;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+
+
+
+    /* =========================================================
+       INVITATION
+    ========================================================= */
+
+    .invitation {
+      visibility: visible;
+      opacity: 1;
+    }
+
+
+    /* =========================================================
+       PAPER SCROLL
+
+       Background is now WHITE.
+       Individual panels control their own backgrounds.
+    ========================================================= */
+
+    .paper-scroll {
+
+      position: relative;
+
+      width: 100%;
+
+      max-width: none;
+
+      margin: 0;
+
+      background: transparent;
+
+      box-shadow: none;
+    }
+
+
+    /* =========================================================
+       SIDE BACKGROUNDS
+    ========================================================= */
+
+    .paper-scroll::before,
+    .paper-scroll::after {
+
+      display: grid;
+    }
+
+    .paper-scroll::before {
+      left: 0;
+    }
+
+    .paper-scroll::after {
+      right: 0;
+    }
+
+
+    /* =========================================================
+       INVITATION PANELS
+    ========================================================= */
+
+    .panel {
+
+      position: relative;
+
+      min-height: 100svh;
+
+      display: grid;
+
+      place-items: center;
+
+      padding: 0;
+
+      overflow: hidden;
+
+      text-align: center;
+
+      background: transparent;
+    }
+
+    .panel > div {
+
+      width: 100%;
+
+      min-width: 0;
+
+      padding:
+        clamp(70px, 11vw, 130px)
+        clamp(16px, 5vw, 28px);
+    }
+
+
+    /* =========================================================
+       ALTERNATING BACKGROUNDS
+
+       Odd sections = Parchment
+       Even sections = White
+    ========================================================= */
+
+    .panel:nth-child(odd) {
+
+      background-color: #f5e8c9;
+
+      background-image:
+        url(
+          "./new background.png"
+        );
+
+      background-position: center;
+
+      background-size: cover;
+
+      background-repeat: no-repeat;
+    }
+
+    .panel:nth-child(even) {
+
+      background:
+        var(--page-background);
+    }
+
+    .panel.plain-white-panel {
+
+      background:
+        var(--page-background) !important;
+    }
+
+
+    /* =========================================================
+       FORCE COVENANT NATIONS CHURCH SECTION
+       TO USE PARCHMENT
+    ========================================================= */
+
+    .parchment-panel {
+
+      background-color: #f5e8c9 !important;
+
+      background-image:
+        url(
+          "./new background.png"
+        ) !important;
+
+      background-position: center;
+
+      background-size: cover;
+
+      background-repeat: no-repeat;
+    }
+
+    .background-card-panel {
+
+      background:
+        transparent !important;
+
+      overflow: visible;
+
+      z-index: 1;
+    }
+
+
+    .background-card-panel::after {
+
+      position:
+        absolute;
+
+      inset: 0;
+
+      z-index: 0;
+
+      background:
+        url(
+          "./new background.png"
+        )
+        center / cover
+        no-repeat;
+
+      content: "";
+
+      filter:
+        drop-shadow(
+          0 10px 18px
+          rgba(55,42,30,.16)
+        );
+
+      pointer-events: none;
+    }
+
+
+    /* Page one uses the animated church artwork in place of the paper card. */
+    .page-one-gif-panel {
+
+      width: 100%;
+
+      height: 100vh;
+
+      height: 100svh;
+
+      min-height: 100vh;
+
+      min-height: 100svh;
+    }
+
+
+    .page-one-gif-panel::after {
+
+      background:
+        url("./download (3).gif")
+        center / 100% 100%
+        no-repeat;
+
+      filter: none;
+    }
+
+
+    .page-one-gif-panel > div {
+
+      align-self: center;
+
+      text-align: center;
+    }
+
+    .page-one-gif-panel .section-title {
+
+      position: relative;
+
+      top: -12px;
+    }
+
+    .page-one-scroll-cue {
+
+      position: absolute;
+
+      z-index: 3;
+
+      left: 50%;
+
+      bottom:
+        max(
+          52px,
+          calc(env(safe-area-inset-bottom) + 44px)
+        );
+
+      display: grid;
+
+      justify-items: center;
+
+      gap: 7px;
+
+      color: #ffffff !important;
+
+      text-decoration: none;
+
+      text-shadow:
+        0 2px 9px
+        rgba(0,0,0,.55);
+
+      transform:
+        translateX(-50%);
+    }
+
+    .page-one-scroll-cue span {
+
+      font-family:
+        Montserrat,
+        sans-serif;
+
+      font-size: .62rem;
+
+      font-weight: 600;
+
+      letter-spacing: .22em;
+    }
+
+    .page-one-scroll-cue::after {
+
+      width: 11px;
+
+      height: 11px;
+
+      border-right:
+        2px solid
+        currentColor;
+
+      border-bottom:
+        2px solid
+        currentColor;
+
+      content: "";
+
+      transform:
+        rotate(45deg);
+
+      animation:
+        page-one-scroll-pulse
+        1.8s
+        ease-in-out
+        infinite;
+    }
+
+    .page-one-scroll-cue::after {
+
+      margin-top: -2px;
+    }
+
+    @keyframes page-one-scroll-pulse {
+
+      0%,
+      100% {
+
+        opacity: .25;
+
+        transform:
+          translateY(-3px)
+          rotate(45deg);
+      }
+
+      50% {
+
+        opacity: 1;
+
+        transform:
+          translateY(4px)
+          rotate(45deg);
+      }
+    }
+
+
+    /* Keep page one viewport-sized on desktop without affecting other panels. */
+    @media (min-width: 700px) {
+
+      .page-one-gif-panel {
+
+        min-height: 100svh;
+
+        aspect-ratio: auto;
+      }
+    }
+
+
+    .background-card-panel > div {
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+
+    .background-card-panel,
+    .background-card-panel * {
+
+      color:
+        #7d5b00 !important;
+    }
+
+
+    .invitation,
+    .invitation * {
+
+      color:
+        #7d5b00 !important;
+    }
+
+
+    /* =========================================================
+       PANEL SEPARATORS
+    ========================================================= */
+
+    .panel + .panel::before {
+
+      position: absolute;
+
+      top: 0;
+
+      left: 12%;
+
+      width: 76%;
+
+      height: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(185,148,85,.55),
+          transparent
+        );
+
+      content: "";
+    }
+
+
+    /* =========================================================
+       TYPOGRAPHY
+    ========================================================= */
+
+    .ornament {
+
+      margin-bottom: 27px;
+
+      color: var(--gold);
+
+      font:
+        500
+        1.15rem/1
+        Cinzel,
+        serif;
+
+      letter-spacing: .55em;
+    }
+
+    .seal-ornament {
+
+      display: block;
+
+      width:
+        clamp(
+          125px,
+          34vw,
+          180px
+        );
+
+      height: auto;
+
+      margin:
+        0 auto 27px;
+
+      filter:
+        drop-shadow(
+          0 8px 12px
+          rgba(73,45,14,.2)
+        );
+    }
+
+
+    .eyebrow {
+
+      margin: 22px 0;
+
+      color: var(--wine);
+
+      font-size: .58rem;
+
+      font-weight: 600;
+
+      letter-spacing: .28em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* Slightly shrink the first panel's invitation eyebrow. */
+
+    .panel:first-child .eyebrow {
+
+      font-size: .58rem;
+
+      margin-top: 58px;
+    }
+
+
+    /* Push the guest name down slightly. */
+
+    .panel:first-child .display-name {
+
+      font-weight: 700;
+
+      margin-top: 34px;
+    }
+
+
+    /* Shrink the first panel's section title. */
+
+    .panel:first-child .section-title {
+
+      font-size:
+        clamp(
+          .78rem,
+          2.4vw,
+          1.35rem
+        ) !important;
+
+      font-weight: 700;
+
+      margin-top: 34px;
+    }
+
+
+    .display-name {
+
+      margin: 0;
+
+      color: var(--wine);
+
+      font:
+        500
+        clamp(1.8rem, 6.5vw, 3.2rem)/1
+        Cormorant Garamond,
+        serif;
+    }
+
+    #mainGuestName.font-cinzel-decorative.is-long-name {
+
+      font-size:
+        clamp(
+          .9rem,
+          2.8vw,
+          1.35rem
+        ) !important;
+
+      line-height: 1.2;
+    }
+
+    .font-cinzel-decorative {
+
+      font-family:
+        "Cinzel Decorative",
+        serif !important;
+    }
+
+
+    .welcome {
+
+      max-width: 550px;
+
+      margin:
+        30px auto 0;
+
+      font:
+        500
+        clamp(1.25rem, 3.5vw, 1.7rem)/1.55
+        Cormorant Garamond,
+        serif;
+    }
+
+
+    .event-title {
+
+      margin:
+        14px 0;
+
+      color: var(--wine);
+
+      font:
+        500
+        clamp(2.8rem, 10vw, 3.8rem)/.9
+        Cormorant Garamond,
+        serif;
+
+      text-align: center;
+    }
+
+    .names-title {
+
+      font-size:
+        clamp(
+          1.9rem,
+          6vw,
+          2.7rem
+        );
+
+      line-height: 1.05;
+
+      white-space: nowrap;
+    }
+
+
+    .ampersand {
+
+      display: block;
+
+      margin:
+        16px 0;
+
+      color: var(--gold);
+
+      font:
+        italic
+        500
+        2.4rem/1
+        Cormorant Garamond,
+        serif;
+    }
+
+
+    .event-date {
+
+      margin:
+        35px 0 0;
+
+      font:
+        600
+        .78rem/1.6
+        Montserrat,
+        sans-serif;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+    }
+
+    .save-date-copy {
+
+      margin: 0;
+    }
+
+
+
+    /* =========================================================
+       MONTESERRAT PARAGRAPHS
+    ========================================================= */
+
+    .font-montserrat {
+
+      font-family:
+        Montserrat,
+        sans-serif;
+    }
+
+
+    .quote {
+
+      max-width: 560px;
+
+      margin: 0 auto;
+
+      color: var(--wine);
+
+      font:
+        italic
+        500
+        clamp(2rem, 6vw, 3.5rem)/1.1
+        Cormorant Garamond,
+        serif;
+    }
+
+
+    .section-title {
+
+      margin:
+        0 0 34px;
+
+      color: var(--wine);
+
+      font:
+        500
+        clamp(2.5rem, 8vw, 4.5rem)/1
+        Cormorant Garamond,
+        serif;
+    }
+
+
+    /* =========================================================
+       SHARED HEADING SIZE
+
+       Keeps these key headings at a consistent responsive size.
+    ========================================================= */
+
+    #mainGuestName,
+    .section-title {
+
+      font-size:
+        clamp(
+          1.2rem,
+          3.6vw,
+          2rem
+        );
+    }
+
+
+    /* =========================================================
+       COUNTDOWN
+    ========================================================= */
+
+    .countdown {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 10px;
+
+      width: 100%;
+
+      margin-top: 40px;
+    }
+
+    .countdown-today {
+
+      display: none;
+
+
+      grid-column: 1 / -1;
+
+      color: var(--wine);
+
+      font:
+        700
+        clamp(2.4rem, 9vw, 4.5rem)/1
+        "Cinzel Decorative",
+        serif;
+
+      letter-spacing: .12em;
+
+      text-shadow:
+        0 0 18px rgba(111, 23, 45, .28);
+    }
+
+    .countdown.is-today .time-box {
+
+      display: none;
+    }
+
+    .countdown.is-today .countdown-today {
+
+      display: block;
+
+      animation:
+        today-pulse 1.6s ease-in-out infinite;
+    }
+
+    @keyframes today-pulse {
+
+      0%,
+      100% {
+
+        opacity: .82;
+
+        transform: scale(.96);
+      }
+
+      50% {
+
+        opacity: 1;
+
+        transform: scale(1.06);
+
+        text-shadow:
+          0 0 28px rgba(111, 23, 45, .5);
+      }
+    }
+
+
+    .time-box {
+
+      padding:
+        20px 5px;
+    }
+
+
+    .time-box strong {
+
+      display: block;
+
+      color: var(--wine);
+
+      font:
+        500
+        clamp(1.8rem, 6vw, 3rem)/1
+        Cormorant Garamond,
+        serif;
+    }
+
+
+    .time-box span {
+
+      display: block;
+
+      margin-top: 8px;
+
+      color: var(--muted);
+
+      font-size: .58rem;
+
+      letter-spacing: .12em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================================
+       VENUE
+    ========================================================= */
+
+    .venue-card {
+
+      width: min(100%, 520px);
+
+      padding:
+        45px 26px;
+    }
+
+
+    /* =========================================================
+       PAGE 4 COMBINED LAYOUT
+    ========================================================= */
+
+    .page-4-content {
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: clamp(10px, 2vh, 18px);
+
+      width: 100%;
+    }
+
+    .page-4-content
+    .section-title {
+
+      margin: 0;
+
+      font-size:
+        clamp(
+          1.35rem,
+          5vw,
+          2.1rem
+        );
+    }
+
+    .page-4-content
+    .event-date {
+
+      margin: 0;
+
+      font-size: .72rem;
+    }
+
+    .page-4-content
+    .countdown {
+
+      margin:
+        clamp(6px, 1.5vh, 14px) 0;
+    }
+
+    .page-4-content
+    .time-box {
+
+      padding:
+        clamp(10px, 2.5vh, 18px)
+        4px;
+    }
+
+    .page-4-content
+    .time-box strong {
+
+      font-size:
+        clamp(
+          1.4rem,
+          5vw,
+          2.2rem
+        );
+    }
+
+    .page-4-content
+    .venue-mini {
+
+      margin-top:
+        clamp(4px, 1vh, 10px);
+    }
+
+    .page-4-content
+    .venue-mini
+    .eyebrow {
+
+      margin:
+        0 0 6px;
+    }
+
+    .page-4-content
+    .venue-mini
+    .venue-name {
+
+      margin: 0;
+
+      font-size:
+        clamp(
+          1.35rem,
+          4.5vw,
+          1.9rem
+        );
+    }
+
+    .page-4-content
+    .venue-mini
+    .action {
+
+      margin-top: 12px;
+
+      padding:
+        10px 18px;
+
+      font-size: .62rem;
+    }
+
+
+    .venue-name {
+
+      color: var(--wine);
+
+      font:
+        500
+        2rem/1.1
+        Cormorant Garamond,
+        serif;
+    }
+
+
+    .venue-address {
+
+      margin:
+        16px auto 0;
+
+      color: var(--muted);
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================================================
+       BUTTON / LINK
+    ========================================================= */
+
+    .action {
+
+      display: inline-block;
+
+      margin-top: 28px;
+
+      padding:
+        14px 24px;
+
+      border:
+        1px solid
+        var(--wine);
+
+      border-radius: 999px;
+
+      color: var(--wine);
+
+      background: transparent;
+
+      text-decoration: none;
+
+      font-size: .69rem;
+
+      font-weight: 600;
+
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
+
+      transition:
+        color .3s ease,
+        background .3s ease,
+        border-color .3s ease,
+        transform .3s ease;
+    }
+
+
+    @media (hover: hover) {
+
+      .action:hover {
+
+        color: #ffffff;
+
+        background:
+          var(--cnc-blue);
+
+        border-color:
+          var(--cnc-blue);
+
+        transform:
+          translateY(-3px);
+      }
+
+      .page-4-content .venue-mini .action:hover,
+      #openRsvp:hover {
+
+        color: #ffffff !important;
+      }
+
+    }
+
+
+    /* =========================================================
+       RSVP POPUP
+    ========================================================= */
+
+    .rsvp-overlay {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 100;
+
+      display: grid;
+
+      place-items: center;
+
+      padding: 20px;
+
+      padding:
+        max(20px, env(safe-area-inset-top))
+        max(20px, env(safe-area-inset-right))
+        max(20px, env(safe-area-inset-bottom))
+        max(20px, env(safe-area-inset-left));
+
+      background:
+        rgba(48, 37, 29, .72);
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      transition:
+        opacity .35s ease,
+        visibility .35s ease;
+    }
+
+
+    .rsvp-overlay.is-open {
+
+      opacity: 1;
+
+      visibility: visible;
+    }
+
+
+    .rsvp-popup {
+
+      position: relative;
+
+      width: min(92vw, 420px);
+
+      padding:
+        42px 34px;
+
+      border-radius: 6px;
+
+      text-align: center;
+
+      background:
+        var(--paper);
+
+      box-shadow:
+        0 28px 55px
+        rgba(48, 37, 29, .25);
+
+      transform:
+        translateY(20px)
+        scale(.96);
+
+      transition:
+        transform .35s var(--ease);
+    }
+
+
+    .rsvp-overlay.is-open
+    .rsvp-popup {
+
+      transform:
+        translateY(0)
+        scale(1);
+    }
+
+
+    .rsvp-close {
+
+      position: absolute;
+
+      top: 14px;
+
+      right: 16px;
+
+      padding: 0;
+
+      border: 0;
+
+      color: var(--muted);
+
+      background: transparent;
+
+      font-size: 1.35rem;
+
+      line-height: 1;
+
+      cursor: pointer;
+    }
+
+
+    .rsvp-title {
+
+      margin:
+        0 0 26px;
+
+      color: var(--wine);
+
+      font:
+        500
+        1.7rem/1.1
+        Cormorant Garamond,
+        serif;
+    }
+
+    .rsvp-email-field {
+
+      display: grid;
+
+      gap: 7px;
+
+      margin-bottom: 16px;
+
+      text-align: left;
+    }
+
+    .rsvp-email-field span {
+
+      color: var(--muted);
+
+      font-size: .68rem;
+
+      font-weight: 600;
+
+      letter-spacing: .12em;
+
+      text-transform: uppercase;
+    }
+
+    .rsvp-email-field input {
+
+      width: 100%;
+
+      padding: 12px 14px;
+
+      border:
+        1px solid
+        rgba(185,148,85,.55);
+
+      border-radius: 4px;
+
+      color: var(--ink);
+
+      background: #ffffff;
+
+      font: 500 .82rem/1.4 Inter, sans-serif;
+
+      outline: none;
+    }
+
+    .rsvp-email-field input:focus {
+
+      border-color:
+        var(--cnc-blue);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(23,148,203,.12);
+    }
+
+
+    .rsvp-options {
+
+      display: grid;
+
+      gap: 14px;
+
+      margin-bottom: 28px;
+
+      text-align: left;
+    }
+
+
+    .rsvp-option {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      padding: 14px 16px;
+
+      border:
+        1px solid
+        rgba(185,148,85,.45);
+
+      border-radius: 4px;
+
+      cursor: pointer;
+
+      transition:
+        background .25s ease,
+        border-color .25s ease;
+    }
+
+
+    @media (hover: hover) {
+
+      .rsvp-option:hover {
+
+        background:
+          rgba(185,148,85,.08);
+      }
+
+    }
+
+
+    .rsvp-option:has(input:checked) {
+
+      border-color:
+        var(--wine);
+
+      background:
+        rgba(100, 22, 36, .06);
+    }
+
+
+    .rsvp-option input {
+
+      width: 15px;
+
+      height: 15px;
+
+      accent-color:
+        var(--wine);
+
+      cursor: pointer;
+    }
+
+
+    .rsvp-option span {
+
+      font-size: .82rem;
+
+      font-weight: 600;
+
+      letter-spacing: .12em;
+
+      text-transform: uppercase;
+    }
+
+
+    .rsvp-submit {
+
+      width: auto;
+
+      padding: 11px 22px;
+
+      border:
+        1px solid
+        var(--cnc-blue);
+
+      border-radius: 999px;
+
+      color: #ffffff !important;
+
+      background:
+        var(--cnc-blue);
+
+      font-size: .72rem;
+
+      font-weight: 600;
+
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
+
+      transition:
+        opacity .25s ease,
+        color .25s ease,
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+    }
+
+
+    .rsvp-submit:disabled {
+
+      opacity: 1;
+
+      color: #ffffff !important;
+
+      cursor: not-allowed;
+    }
+
+    .rsvp-status {
+
+      min-height: 1.4em;
+
+      margin:
+        14px 0 0;
+
+      color: var(--muted);
+
+      font-size: .72rem;
+
+      line-height: 1.4;
+    }
+
+    .rsvp-status.is-success {
+
+      color: #18794e;
+    }
+
+    .rsvp-status.is-error {
+
+      color: var(--wine);
+    }
+
+
+    @media (hover: hover) {
+
+      .rsvp-submit:not(:disabled):hover {
+
+        opacity: 1;
+
+        color: #ffffff;
+
+        background:
+          var(--cnc-blue);
+
+        border-color:
+          var(--cnc-blue);
+
+        transform:
+          translateY(-2px);
+      }
+
+    }
+
+
+    .small-copy {
+
+      max-width: 560px;
+
+      margin: 0 auto;
+
+      font:
+        500
+        .58rem/1.6
+        Montserrat,
+        sans-serif;
+    }
+
+
+    /* =========================================================
+       SCROLL REVEAL
+    ========================================================= */
+
+    .reveal {
+
+      opacity: 0;
+
+      transform:
+        translateY(45px);
+
+      filter:
+        blur(4px);
+
+      transition:
+
+        opacity 1.05s ease,
+
+        transform
+        1.05s var(--ease),
+
+        filter
+        1.05s ease;
+    }
+
+
+    .reveal.is-visible {
+
+      opacity: 1;
+
+      transform:
+        translateY(0);
+
+      filter:
+        blur(0);
+    }
+
+
+    /* =========================================================
+       MUSIC BUTTON
+    ========================================================= */
+
+    .music-button {
+
+      position: fixed;
+
+      right: 20px;
+      bottom: 20px;
+
+      right:
+        max(20px, env(safe-area-inset-right));
+
+      bottom:
+        max(20px, env(safe-area-inset-bottom));
+
+
+      z-index: 20;
+
+      width: 52px;
+
+      aspect-ratio: 1;
+
+      display: none;
+
+      place-items: center;
+
+      border: 0;
+
+      border-radius: 50%;
+
+      color: #ffffff;
+
+      background:
+        var(--cnc-blue);
+
+      box-shadow:
+        0 9px 25px
+        rgba(23,148,203,.30);
+    }
+
+
+    /* Match the Rushere Marathon title font throughout the invitation. */
+    body *:not(.page-footer):not(.page-footer *) {
+      font-family: Anton, Impact, sans-serif !important;
+    }
+
+    .page-footer,
+    .page-footer * {
+      font-family: Inter, Arial, sans-serif !important;
+      font-weight: 400 !important;
+      text-align: center;
+    }
+
+    .page-footer {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .page-footer p {
+      width: 100%;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .time-box strong,
+    .venue-name {
+      color: #d8ff31 !important;
+    }
+
+    /* Unified text treatment requested for the simplified invitation. */
+    body,
+    body * {
+      color: #222222 !important;
+      font-weight: 400 !important;
+    }
+
+    .page-footer p {
+      font-size: .68rem !important;
+    }
+
+
+    /* =========================================================
+       DESKTOP INVITATION CANVAS
+
+       Mirrors the centered 450px card structure used by the
+       Sacred Garden reference. Everything in this block begins
+       above the phone breakpoint, so the mobile view is unchanged.
+    ========================================================= */
+
+    @media (min-width: 521px) {
+
+      body {
+
+        background:
+          var(--page-background);
+      }
+
+      .invitation {
+
+        background:
+          var(--page-background);
+      }
+
+      .paper-scroll {
+
+        width: 450px;
+
+        max-width:
+          calc(100vw - 48px);
+
+        margin:
+          0 auto;
+
+        box-shadow:
+          none;
+      }
+
+      .panel {
+
+        width: 100%;
+
+        min-height: 630px;
+      }
+
+
+      .page-one-gif-panel {
+
+        height: auto;
+
+        min-height: 0;
+
+        aspect-ratio:
+          9 / 16;
+      }
+
+      .page-one-gif-panel::after {
+
+        background-size:
+          100% 100%;
+      }
+
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 520px) {
+
+      .countdown {
+
+        gap: 4px;
+      }
+
+      .panel:not(.page-four-panel) {
+
+        min-height: 52svh;
+      }
+
+      .page-one-gif-panel {
+
+        min-height: 100svh;
+      }
+
+      .page-one-gif-panel::after {
+
+        background-position: center;
+
+        background-size: 100% 100%;
+      }
+
+      .page-one-gif-panel > div {
+
+        align-self: center;
+      }
+
+    }
+
+    .page-two-image {
+
+      display: block;
+
+      width: min(100%, 420px);
+
+      height: auto;
+
+      object-fit: contain;
+    }
+
+    .page-nine-message {
+
+      width: 100%;
+
+      max-width: 310px;
+
+      margin: 0 auto;
+
+      padding-inline:
+        clamp(
+          14px,
+          4vw,
+          20px
+        );
+
+      font-size:
+        clamp(
+          .58rem,
+          1.8vw,
+          .68rem
+        );
+
+      font-weight: 500;
+
+      line-height: 1.65;
+
+      letter-spacing: .045em;
+
+      text-transform: none;
+    }
+
+    .page-nine-citation {
+
+      display: inline-block;
+
+      margin-top: .55em;
+
+      font-weight: 600;
+
+      letter-spacing: .08em;
+    }
+
+    .page-4-content .section-title.font-cinzel-decorative {
+
+      font-size:
+        clamp(
+          .8rem,
+          2.9vw,
+          1.2rem
+        ) !important;
+    }
+
+    .venue-name.font-cinzel-decorative {
+
+      font-size:
+        clamp(
+          1.2rem,
+          4vw,
+          1.7rem
+        ) !important;
+    }
+
+    .rsvp-title.font-cinzel-decorative {
+
+      font-size:
+        1.5rem !important;
+    }
+
+    .panel.page-four-panel {
+
+      min-height: 0 !important;
+    }
+
+    .page-four-panel > div {
+
+      padding:
+        clamp(38px, 7vw, 58px)
+        clamp(16px, 5vw, 28px);
+    }
+
+    /* Page spacing refinements. */
+    .page-four-panel > div {
+      padding-block: clamp(30px, 5vw, 42px) clamp(22px, 4vw, 34px) !important;
+    }
+
+    .route-maps-panel {
+      padding-block: clamp(14px, 3vw, 22px) !important;
+    }
+
+    .photos-access-panel {
+      padding-block: clamp(12px, 2.5vw, 20px) !important;
+    }
+
+    .page-four-panel > .page-4-content,
+    .route-maps-panel > .route-maps-content,
+    .photos-access-panel > .photos-access-content {
+      position: relative;
+      z-index: 2;
+    }
+
+
+    /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+
+        scroll-behavior: auto !important;
+
+        animation-duration:
+          .01ms !important;
+
+        transition-duration:
+          .01ms !important;
+      }
+
+    }
+    /* Full-viewport hero image sequence. */
+    .page-one-gif-panel {
+      padding: 0 !important;
+      overflow: hidden !important;
+      background: #0a0e0c !important;
+    }
+
+    .page-one-gif-panel::after {
+      content: none !important;
+      display: none !important;
+    }
+
+    .page-one-gif-panel > .hero-slideshow {
+      --hero-card-right: clamp(8px, 1.2vw, 18px);
+      --hero-card-bottom: clamp(18px, 3vw, 34px);
+      --hero-card-width: clamp(74px, 8vw, 128px);
+      --hero-card-height: clamp(90px, 9.76vw, 156px);
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 0 !important;
+      background: #0a0e0c;
+      isolation: isolate;
+      container-type: inline-size;
+    }
+
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .hero-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.07);
+      filter: saturate(1.12) contrast(1.04);
+    }
+
+    .hero-incoming {
+      z-index: 2;
+      clip-path: inset(
+        calc(100% - var(--hero-card-bottom) - var(--hero-card-height))
+        var(--hero-card-right)
+        var(--hero-card-bottom)
+        calc(100% - var(--hero-card-right) - var(--hero-card-width))
+      );
+    }
+
+    .hero-incoming img {
+      transform: scale(1.18);
+    }
+
+    .hero-slideshow.is-switching .hero-incoming {
+      animation: hero-expand-in 1.2s cubic-bezier(.65, 0, .18, 1) forwards;
+    }
+
+    .hero-slideshow.is-switching .hero-incoming img {
+      animation: hero-settle 1.2s cubic-bezier(.2, .75, .25, 1) forwards;
+    }
+
+    .hero-photo--portrait img {
+      object-position: center 42%;
+    }
+
+    .hero-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 5;
+      display: grid;
+      justify-items: center;
+      width: 92%;
+      margin: 0;
+      color: #fff9e9 !important;
+      font: clamp(42px, 15cqw, 180px) / .72 "Anton", Impact, sans-serif;
+      letter-spacing: -.045em;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 0 3px 0 rgba(0, 0, 0, .16);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .hero-title span {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .hero-title-rushere {
+      color: #fff9e9 !important;
+    }
+
+    .hero-title-marathon {
+      position: relative;
+      z-index: 1;
+      color: #d6ff18 !important;
+      font-size: .82em;
+      letter-spacing: -.055em;
+      transform: translateY(-.02em);
+    }
+
+    .hero-next-card {
+      position: absolute;
+      right: var(--hero-card-right);
+      bottom: var(--hero-card-bottom);
+      z-index: 6;
+      width: var(--hero-card-width);
+      height: var(--hero-card-height);
+      padding: 0;
+      border: 0;
+      overflow: hidden;
+      background: transparent;
+      box-shadow: 10px 12px 0 rgba(0, 0, 0, .24);
+    }
+
+    .hero-next-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.15) contrast(1.07);
+    }
+
+    .hero-shade {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      background:
+        linear-gradient(180deg, rgba(5, 10, 9, .08) 48%, rgba(5, 10, 9, .52) 100%);
+      pointer-events: none;
+    }
+
+    .hero-slideshow .page-one-scroll-cue {
+      z-index: 7;
+    }
+
+    @keyframes hero-expand-in {
+      from {
+        clip-path: inset(
+          calc(100% - var(--hero-card-bottom) - var(--hero-card-height))
+          var(--hero-card-right)
+          var(--hero-card-bottom)
+          calc(100% - var(--hero-card-right) - var(--hero-card-width))
+        );
+      }
+      to { clip-path: inset(0); }
+    }
+
+    @keyframes hero-settle {
+      from { transform: scale(1.18) translateX(5%); }
+      to { transform: scale(1.07) translateX(0); }
+    }
+
+    @media (max-width: 600px) {
+      .page-one-gif-panel,
+      .page-one-gif-panel > .hero-slideshow {
+        --hero-card-right: 6px;
+        --hero-card-bottom: 18px;
+        --hero-card-width: 72px;
+        --hero-card-height: 88px;
+        width: 100vw;
+        height: 100vh;
+        height: 100svh;
+        min-height: 100svh;
+      }
+
+      .hero-incoming {
+        clip-path: inset(calc(100% - 106px) 6px 18px calc(100% - 78px));
+      }
+
+      .hero-title {
+        top: 48%;
+        width: 88%;
+        font-size: clamp(40px, 16cqw, 72px);
+        line-height: .74;
+        letter-spacing: -.05em;
+      }
+
+      .hero-title-marathon {
+        font-size: .72em;
+        letter-spacing: -.055em;
+      }
+
+      @keyframes hero-expand-in {
+        from { clip-path: inset(calc(100% - 106px) 6px 18px calc(100% - 78px)); }
+        to { clip-path: inset(0); }
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-incoming,
+      .hero-incoming img {
+        animation-duration: .01ms !important;
+      }
+    }
+
+    .page-four-panel,
+    .page-four-panel * {
+      color: #000 !important;
+      font-family: "Futura Condensed", "Futura-CondensedMedium", "Arial Narrow", sans-serif !important;
+      font-weight: 400 !important;
+    }
+
+    .page-footer {
+      position: relative;
+      display: block;
+      width: 100%;
+      min-height: 0 !important;
+      padding: 0 !important;
+      background: var(--page-background);
+    }
+
+    .page-footer-artwork {
+      position: relative;
+      display: grid;
+      place-items: end center;
+      width: 100%;
+      min-height: clamp(520px, 100svh, 1050px);
+      padding: 0 20px clamp(34px, 6vh, 64px);
+      background: var(--page-background) url("./background.png") center / cover no-repeat;
+    }
+
+    .page-footer-signature {
+      margin: 0;
+      color: #ffffff !important;
+      font: 400 clamp(1.15rem, 3.2vw, 2rem) / 1.2 Montserrat, Arial, sans-serif !important;
+      letter-spacing: .16em;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, .35);
+    }
+
+    @media (max-width: 520px) {
+      .page-footer-artwork {
+        min-height: 0;
+        aspect-ratio: 736 / 610;
+        padding: 0 68px 46px 20px;
+        background-size: 100% auto;
+        background-position: center bottom;
+      }
+
+      .page-footer-signature {
+        color: #ffffff !important;
+        font-size: 1.05rem !important;
+      }
+    }
+
+    .music-button {
+      display: grid !important; visibility: visible !important; opacity: 1 !important;
+      position: fixed !important; right: max(20px, env(safe-area-inset-right)) !important;
+      bottom: max(20px, env(safe-area-inset-bottom)) !important; z-index: 9999 !important;
+      color: #fff !important; background: #d8ff31 !important; font-size: 0 !important;
+      pointer-events: auto !important;
+    }
+    .music-button::before { content: ""; width: 27px; height: 27px; background: center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='13' cy='4' r='2'/%3E%3Cpath d='m7 21 3-5 2-4 3 3 2 6M6 12l4-3 3 1 4-2M10 9l-2 5-4 2'/%3E%3C/svg%3E"); transform: translateX(-4px); }
+    .music-button::after { content: ""; position: absolute; right: 8px; bottom: 9px; width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 8px solid #fff; }
+    .music-button[aria-label="Pause music"]::after { width: 8px; height: 10px; border: 0; background: linear-gradient(to right,#fff 0 3px,transparent 3px 5px,#fff 5px 8px); }
+
+    .route-maps-panel { min-height: 630px; padding: clamp(42px,8vw,72px) clamp(18px,5vw,42px) !important; background: transparent !important; }
+    .route-maps-content { width: min(100%, calc(310px + clamp(32px, 10vw, 56px))); margin: auto; background: transparent; }
+    .route-maps-panel, .route-maps-panel * { font-family: "Futura Condensed", "Futura-CondensedMedium", "Arial Narrow", sans-serif !important; font-weight: 400 !important; }
+    .route-maps-title { margin: 0 0 10px; text-align: center; font-size: clamp(2rem,8vw,4rem); }
+    .route-maps-intro { margin: 0 0 28px; text-align: center; font-size: .8rem; }
+    .route-card { margin: 10px 0; border: 1px solid #222; background: transparent; }
+    .route-card summary { display: flex; align-items: center; justify-content: space-between; padding: 18px; cursor: pointer; list-style: none; font-size: 1.3rem; }
+    .route-card summary::-webkit-details-marker { display: none; }
+    .route-card summary::after {
+      content: "" !important;
+      flex: 0 0 24px;
+      width: 24px;
+      height: 24px;
+      background: center / contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='4' r='2'/%3E%3Cpath d='M12 6v7M8 9l4 2 4-2M9 21l3-8 3 8'/%3E%3C/svg%3E");
+    }
+    .route-card[open] summary::after { content: "−"; }
+    .route-card-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 0 18px 18px; }
+    .route-card[open] summary::after {
+      content: "" !important;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='13' cy='4' r='2'/%3E%3Cpath d='m7 21 3-5 2-4 3 3 2 6M6 12l4-3 3 1 4-2M10 9l-2 5-4 2'/%3E%3C/svg%3E");
+    }
+    .route-map-action { display: grid; place-items: center; min-height: 44px; padding: 12px 18px; border: 1px solid var(--wine); border-radius: 999px; color: #000 !important; background: transparent !important; font-size: .69rem; letter-spacing: .15em; text-transform: uppercase; cursor: pointer; }
+    .route-map-viewer { position: fixed; inset: 0; z-index: 10000; display: none; place-items: center; grid-template-rows: 1fr; padding: 18px; background: rgba(17,17,17,.64); }
+    .route-map-viewer.is-open { display: grid; }
+    .route-map-dialog { display: grid; grid-template-rows: auto minmax(0,1fr); width: min(88vw,520px); height: min(58vh,400px); padding: 12px; border-radius: 14px; background: #fff; box-shadow: 0 24px 70px rgba(0,0,0,.38); }
+    .route-map-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 10px; }
+    .route-map-back { min-height: 44px; padding: 8px 18px; border: 1px solid #222; border-radius: 999px; color: #222 !important; background: transparent; }
+    .route-map-viewer-title { margin: 0; color: #222 !important; font-size: 1.1rem; }
+    .route-map-message { display: grid; place-items: center; width: 100%; height: 100%; min-height: 0; margin: 0; padding: 24px; border-radius: 10px; background: #f7f3e8; color: #222 !important; font-size: clamp(1.15rem,4vw,1.6rem); font-weight: 600 !important; text-align: center; }
+    .photos-access-panel { min-height: 360px !important; padding: clamp(60px,10vw,96px) 20px 42px !important; background: transparent !important; }
+    .photos-access-content { width: min(100%, calc(360px + clamp(32px, 10vw, 56px))); margin: auto; text-align: center; }
+    .photos-access-panel, .photos-access-panel * { color: #000 !important; font-family: "Futura Condensed", "Futura-CondensedMedium", "Arial Narrow", sans-serif !important; font-weight: 400 !important; }
+    .photos-access-title { margin: 0 0 8px; font-size: clamp(1.45rem,5vw,2rem); line-height: 1; }
+    .photos-access-copy { margin: 0 auto 16px; font-size: .9rem; line-height: 1.25; }
+    .photos-access-button { margin-top: 0 !important; border-color: var(--wine) !important; color: #000 !important; background: transparent !important; }
+
+    /* Screenshot-matched vertical rhythm with progressively tighter cards. */
+    .panel.page-four-panel {
+      min-height: 360px !important;
+    }
+
+    .page-four-panel > .page-4-content {
+      padding-block: 24px 20px !important;
+    }
+
+    .route-maps-panel {
+      min-height: 520px !important;
+      padding-block: 48px 38px !important;
+    }
+
+    .route-maps-intro {
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .route-card {
+      margin-block: 9px;
+    }
+
+    .route-card summary {
+      padding-block: 18px;
+    }
+
+    .photos-access-panel {
+      min-height: 300px !important;
+      padding-block: 54px 34px !important;
+    }
+
+    /* Use the countdown card as the spacing system for every inner page. */
+    .panel.page-four-panel,
+    .panel.route-maps-panel,
+    .panel.photos-access-panel {
+      min-height: 360px !important;
+      padding: 0 !important;
+      align-items: start;
+    }
+
+    .panel.route-maps-panel {
+      margin-top: 10px;
+    }
+
+    .page-four-panel > .page-4-content,
+    .route-maps-panel > .route-maps-content,
+    .photos-access-panel > .photos-access-content {
+      padding: 24px clamp(16px, 5vw, 28px) 20px !important;
+      box-sizing: border-box;
+    }
+
+    /* Keep the footer artwork directly beneath Marathon Photos. */
+    .panel.photos-access-panel {
+      min-height: 0 !important;
+      height: auto !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .photos-access-panel > .photos-access-content {
+      padding-block: 30px 34px !important;
+    }
+
+    /* All non-hero copy uses black Montserrat. The hero lives in its own iframe. */
+    html body,
+    html body .page-four-panel,
+    html body .page-four-panel *,
+    html body .route-maps-panel,
+    html body .route-maps-panel *,
+    html body .photos-access-panel,
+    html body .photos-access-panel *,
+    html body .route-map-viewer,
+    html body .route-map-viewer *,
+    html body .page-footer,
+    html body .page-footer * {
+      color: #000000 !important;
+      font-family: Montserrat, Arial, sans-serif !important;
+    }
+
+    .music-button,
+    .music-button * {
+      color: #ffffff !important;
+    }
+
+    button,
+    .action,
+    .route-map-action,
+    .route-map-back {
+      transition: background-color .25s ease, border-color .25s ease, color .25s ease, transform .25s ease;
+    }
+
+    @media (hover: hover) {
+      html body button:hover,
+      html body .route-distance-select:hover,
+      html body .action:hover,
+      html body .route-map-action:hover,
+      html body .route-map-back:hover {
+        color: #000000 !important;
+        background: #d8ff31 !important;
+        border-color: #d8ff31 !important;
+        transform: translateY(-2px);
+      }
+    }
+
+    .route-distance-select:focus-visible {
+      outline: 2px solid #d8ff31;
+      outline-offset: 2px;
+    }
+
+    @media (max-width:520px) { .route-card-actions { grid-template-columns: 1fr; } .route-map-viewer { padding: 10px; } }
+
+    /* Single route-map selector and preview. */
+    .route-maps-content {
+      width: min(100%, 760px) !important;
+    }
+
+    .route-map-shell {
+      overflow: hidden;
+      border: 1px solid #222;
+      background: rgba(255,255,255,.74);
+    }
+
+    .route-map-controls {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) auto;
+      gap: 14px;
+      align-items: end;
+      padding: 18px;
+      border-top: 1px solid #222;
+    }
+
+    .route-distance-field {
+      display: grid;
+      gap: 7px;
+      min-width: 0;
+      text-align: left;
+    }
+
+    .route-distance-field span,
+    .route-map-current {
+      font: 600 .65rem/1 Montserrat, Arial, sans-serif !important;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .route-distance-select {
+      width: 100%;
+      min-height: 46px;
+      padding: 10px 42px 10px 14px;
+      border: 1px solid #222;
+      border-radius: 999px;
+      color: #000;
+      background: #fff;
+      font-size: 1.15rem;
+      cursor: pointer;
+    }
+
+    .route-download-button {
+      min-height: 46px;
+      padding: 11px 20px;
+      border: 1px solid var(--wine);
+      border-radius: 999px;
+      color: #000 !important;
+      background: transparent;
+      font: 600 .66rem/1 Montserrat, Arial, sans-serif !important;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .route-download-button:disabled {
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    .route-map-display {
+      display: grid;
+      place-items: center;
+      min-height: clamp(250px,42vw,410px);
+      padding: 28px;
+      background: #f7f3e8;
+    }
+
+    .route-map-display img {
+      display: none;
+      width: 100%;
+      max-height: 390px;
+      object-fit: contain;
+    }
+
+    .route-map-display.has-map img {
+      display: block;
+    }
+
+    .route-map-display.has-map .route-map-placeholder {
+      display: none;
+    }
+
+    .route-map-placeholder {
+      color: #222 !important;
+      font-size: clamp(1.15rem,4vw,1.65rem);
+      font-weight: 600 !important;
+      text-align: center;
+    }
+
+    .route-map-placeholder p {
+      margin: 0;
+    }
+
+    .route-map-current {
+      margin-bottom: 12px !important;
+    }
+
+    @media (max-width: 560px) {
+      .route-map-controls {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+      }
+
+      .route-download-button {
+        width: 100%;
+      }
+
+      .route-map-display {
+        min-height: 230px;
+        padding: 20px;
+      }
+    }
+
+    /* Final sizing: border only the timer and keep Route Maps compact. */
+    #eventCountdown.countdown {
+      padding: 8px;
+      border: 1px solid #b8bdb7;
+      border-radius: 18px;
+    }
+
+    .panel.route-maps-panel {
+      min-height: 0 !important;
+      height: auto !important;
+      margin-top: 0;
+      padding: 0 !important;
+    }
+
+    .route-maps-panel > .route-maps-content {
+      width: min(100%, 620px) !important;
+      padding: 20px clamp(14px, 4vw, 22px) 24px !important;
+    }
+
+    .route-maps-title {
+      margin-bottom: 6px;
+      font-size: clamp(1.65rem, 6vw, 2.7rem);
+    }
+
+    .route-maps-intro {
+      margin-bottom: 14px;
+    }
+
+    .route-map-display {
+      min-height: clamp(155px, 28vw, 240px);
+      padding: 16px;
+    }
+
+    .route-map-display img {
+      max-height: 220px;
+    }
+
+    .route-map-controls {
+      gap: 10px;
+      padding: 12px;
+    }
+
+    @media (max-width: 560px) {
+      #eventCountdown.countdown {
+        padding: 6px 4px;
+        border-radius: 14px;
+      }
+
+      .route-map-display {
+        min-height: 145px;
+        padding: 12px;
+      }
+
+      .route-map-controls {
+        gap: 8px;
+        padding: 10px;
+      }
+    }
+
+    /* Montserrat everywhere except the branded hero title. */
+    body *:not(.hero-title):not(.hero-title *) {
+      font-family: Montserrat, Arial, sans-serif !important;
+      font-weight: 400 !important;
+    }
+
+    .hero-title,
+    .hero-title * {
+      font-family: "Anton", Impact, sans-serif !important;
+      font-weight: 400 !important;
+    }
+
+    .hero-title .hero-title-rushere {
+      color: #fff9e9 !important;
+    }
+
+    .hero-title .hero-title-marathon {
+      color: #d6ff18 !important;
+    }
+
+    html body .hero-slideshow .page-one-scroll-cue,
+    html body .hero-slideshow .page-one-scroll-cue span,
+    html body .hero-slideshow .page-one-scroll-cue::after {
+      color: #e5eedf !important;
+      border-color: #e5eedf !important;
+    }
+
+    html body .page-footer .page-footer-signature {
+      color: #ffffff !important;
+      font-size: clamp(1.05rem, 3vw, 1.75rem) !important;
+      font-weight: 400 !important;
+    }
+
+    @media (max-width: 520px) {
+      html body .page-footer .page-footer-signature {
+        font-size: 1rem !important;
+      }
+    }
+
+    /* Match Route Maps borders to the countdown's soft gray. */
+    .route-map-shell,
+    .route-map-controls,
+    .route-distance-select,
+    .route-download-button {
+      border-color: #b8bdb7 !important;
+    }
+
+    .route-distance-select,
+    .route-download-button {
+      min-height: 40px;
+    }
+
+    .route-distance-select {
+      padding: 7px 36px 7px 13px;
+      background-color: #e5eedf;
+      font-size: 1rem;
+    }
+
+    .route-distance-select option {
+      color: #000000;
+      background: #e5eedf;
+    }
+
+    .route-distance-select:hover,
+    .route-distance-select:focus {
+      background-color: #d8ff31 !important;
+    }
+
+    .route-distance-select option:hover,
+    .route-distance-select option:checked {
+      background: #d8ff31;
+    }
+
+    .route-download-button {
+      padding: 8px 16px;
+      font-size: .61rem !important;
+    }
+
+    .route-map-shell {
+      border-radius: 10px;
+    }
+
+    .route-map-controls {
+      grid-template-columns: minmax(180px, 72%) auto;
+      justify-content: center;
+    }
+
+    .route-distance-field,
+    .route-download-button {
+      width: 100%;
+      max-width: 280px;
+    }
+
+    button:not(.music-button),
+    .action,
+    .route-distance-select {
+      border-color: #b8bdb7 !important;
+    }
+
+    @media (max-width: 560px) {
+      .route-map-shell {
+        border-radius: 8px;
+      }
+
+      .route-map-controls {
+        grid-template-columns: minmax(0, 84%);
+        justify-items: center;
+      }
+
+      .route-distance-field,
+      .route-download-button {
+        width: 100% !important;
+        max-width: 260px;
+      }
+    }
+
+    /* Keep the route label, selector, and download action on one line. */
+    .route-map-controls {
+      grid-template-columns: auto minmax(100px, 150px) minmax(100px, 150px);
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .route-distance-field {
+      display: contents;
+    }
+
+    .route-distance-field span {
+      white-space: nowrap;
+    }
+
+    .route-distance-select,
+    .route-download-button {
+      width: 150px !important;
+      max-width: 150px !important;
+    }
+
+    @media (max-width: 480px) {
+      .route-map-controls {
+        grid-template-columns: auto minmax(88px, 1fr) minmax(88px, 1fr);
+        gap: 6px;
+        padding-inline: 8px;
+      }
+
+      .route-distance-field span {
+        font-size: .54rem !important;
+        letter-spacing: .06em;
+      }
+
+      .route-distance-select,
+      .route-download-button {
+        width: 100% !important;
+        max-width: 120px !important;
+        padding-inline: 10px;
+      }
+
+      .route-distance-select {
+        padding-right: 24px;
+      }
+    }
+
+    /* Final text colors and compact dropdown arrow position. */
+    .route-distance-select {
+      appearance: none;
+      background-image:
+        linear-gradient(45deg, transparent 50%, #082314 50%),
+        linear-gradient(135deg, #082314 50%, transparent 50%);
+      background-position:
+        calc(100% - 25px) 50%,
+        calc(100% - 20px) 50%;
+      background-size: 5px 5px, 5px 5px;
+      background-repeat: no-repeat;
+    }
+
+    html body .event-date,
+    html body #eventCountdown,
+    html body #eventCountdown *,
+    html body .venue-mini .eyebrow,
+    html body .venue-mini .venue-name,
+    html body .venue-mini .action,
+    html body .route-maps-intro,
+    html body .photos-access-title,
+    html body .photos-access-copy {
+      color: #47b24a !important;
+    }
+
+    @media (hover: hover) {
+      html body button:not(.music-button):hover,
+      html body .action:hover,
+      html body .route-map-action:hover,
+      html body .route-map-back:hover,
+      html body .route-distance-select:hover {
+        color: #e5eedf !important;
+      }
+
+      html body button:not(.music-button):hover *,
+      html body .action:hover * {
+        color: #e5eedf !important;
+      }
+    }
+
+    .map-upload-toast {
+      position: fixed;
+      right: 18px;
+      bottom: 22px;
+      z-index: 11000;
+      max-width: calc(100vw - 36px);
+      padding: 12px 17px;
+      border: 1px solid #222;
+      border-radius: 8px;
+      color: #111;
+      background: #d8ff31;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+      font-size: .78rem;
+      letter-spacing: .03em;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .22s ease, transform .22s ease;
+      pointer-events: none;
+    }
+
+    .map-upload-toast.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Final site color palette. */
+    html body *:not(.hero-title):not(.hero-title *):not(.page-one-scroll-cue):not(.page-one-scroll-cue *) {
+      color: #082314 !important;
+    }
+
+    html body .page-footer .page-footer-signature {
+      color: #082314 !important;
+    }
+
+    html body .hero-title .hero-title-marathon {
+      color: #47b24a !important;
+    }
+
+    html body .music-button {
+      background: #47b24a !important;
+      border-color: #47b24a !important;
+    }
+
+    @media (hover: hover) {
+      html body .music-button:hover {
+        background: #006a39 !important;
+        border-color: #006a39 !important;
+      }
+    }
+
+    .route-map-display {
+      transition: background-color .35s ease;
+    }
+
+    .route-map-display[data-distance="5"] { background-color: #47b24a; }
+    .route-map-display[data-distance="10"] { background-color: #006a39; }
+    .route-map-display[data-distance="21"] { background-color: #006582; }
+    .route-map-display[data-distance="42"] { background-color: #082314; }
+
+    .route-map-display[data-distance] .route-map-placeholder,
+    .route-map-display[data-distance] .route-map-placeholder * {
+      color: #e5eedf !important;
+    }
+
+    html body .route-map-display[data-distance="10"] .route-map-placeholder,
+    html body .route-map-display[data-distance="10"] .route-map-placeholder * {
+      color: #e5eedf !important;
+    }
+
+    html body #routeMapDisplay[data-distance] #routeMapCurrent,
+    html body #routeMapDisplay[data-distance] .route-map-placeholder > p {
+      color: #e5eedf !important;
+    }
+
+    @media (hover: hover) {
+      html body button:not(.music-button):hover,
+      html body .action:hover,
+      html body .route-map-action:hover,
+      html body .route-map-back:hover,
+      html body .route-distance-select:hover {
+        color: #082314 !important;
+        background: #47b24a !important;
+        border-color: #47b24a !important;
+      }
+    }
+
+    html body .route-distance-select:focus,
+    html body .route-distance-select option:hover,
+    html body .route-distance-select option:checked {
+      color: #082314 !important;
+      background: #47b24a !important;
+    }
+
+    html body .route-distance-select:focus-visible {
+      outline-color: #47b24a;
+    }
+
+    html body .map-upload-toast {
+      color: #082314 !important;
+      background: #47b24a;
+    }
+
+    /* Keep the requested supporting copy aligned with the countdown color. */
+    html body .page-four-panel .event-date,
+    html body .page-four-panel .venue-mini .eyebrow,
+    html body .page-four-panel .venue-mini .venue-name,
+    html body .route-maps-panel .route-maps-intro,
+    html body .photos-access-panel .photos-access-title,
+    html body .photos-access-panel .photos-access-copy {
+      color: #47b24a !important;
+    }
+
+    html body .route-distance-field > span {
+      color: #47b24a !important;
+    }
+
+    html body a.google-maps-button,
+    html body button.route-download-button {
+      color: #47b24a !important;
+    }
+
+    html body a.google-maps-button:hover,
+    html body a.google-maps-button:focus-visible,
+    html body button.route-download-button:hover,
+    html body button.route-download-button:focus-visible {
+      color: #e5eedf !important;
+    }
+
+  </style>
+  <!-- Mobile-first implementation notes: ./mobile.md -->
+</head>
+
+<body>
+
+
+
+
+  <!-- =======================================================
+       MAIN INVITATION
+  ======================================================== -->
+
+  <main
+    class="invitation"
+    id="invitation"
+  >
+
+    <div class="paper-scroll">
+
+
+      <!-- ===================================================
+           PAGE 1
+           PARCHMENT
+      ==================================================== -->
+
+      <section class="panel background-card-panel page-one-gif-panel">
+        <div class="hero-slideshow" aria-label="Rushere Marathon highlights">
+          <div class="hero-photo hero-current hero-photo--portrait">
+            <img id="heroCurrentImage" src="./one.jpg" alt="Rushere Marathon visual" fetchpriority="high">
+          </div>
+          <div class="hero-photo hero-incoming">
+            <img id="heroNextImage" src="./two.jpg" alt="">
+          </div>
+          <div class="hero-shade" aria-hidden="true"></div>
+          <h1 class="hero-title" aria-label="Rushere Marathon">
+            <span class="hero-title-rushere">Rushere</span>
+            <span class="hero-title-marathon">Marathon</span>
+          </h1>
+          <button class="hero-next-card" id="heroNextCard" type="button" aria-label="Show next hero image">
+            <img id="heroPreviewImage" src="./two.jpg" alt="">
+          </button>
+          <a class="page-one-scroll-cue" href="#eventCountdown" aria-label="Scroll to the event details">
+            <span>SCROLL</span>
+          </a>
+        </div>
+      </section>
+
+
+
+
+      <!-- ===================================================
+           PAGE 4
+           WHITE
+      ==================================================== -->
+
+      <section class="panel plain-white-panel page-four-panel">
+
+        <div class="page-4-content">
+
+          <p class="event-date save-date-copy reveal font-montserrat" style="color:#47b24a !important">
+
+            12 September 2026
+            &middot;
+            Rushere, Uganda
+
+          </p>
+
+
+          <div
+            class="countdown reveal"
+            id="eventCountdown"
+            aria-label="Event countdown"
+            aria-live="polite"
+          >
+
+            <div
+              class="countdown-today"
+              id="countdownToday"
+              aria-hidden="true"
+            >
+              TODAY
+            </div>
+
+            <div class="time-box">
+
+              <strong id="days">
+                00
+              </strong>
+
+              <span>
+                Days
+              </span>
+
+            </div>
+
+
+            <div class="time-box">
+
+              <strong id="hours">
+                00
+              </strong>
+
+              <span>
+                Hours
+              </span>
+
+            </div>
+
+
+            <div class="time-box">
+
+              <strong id="minutes">
+                00
+              </strong>
+
+              <span>
+                Minutes
+              </span>
+
+
+            </div>
+
+
+            <div class="time-box">
+
+              <strong id="seconds">
+                00
+              </strong>
+
+              <span>
+                Seconds
+              </span>
+
+            </div>
+
+          </div>
+
+          <div class="venue-mini reveal">
+
+            <p class="eyebrow font-montserrat" style="color:#47b24a !important">
+              Location
+            </p>
+
+            <h3 class="venue-name font-cinzel-decorative" style="color:#47b24a !important">
+              Rushere
+            </h3>
+
+            <a
+              class="action google-maps-button"
+              href="https://www.google.com/maps/search/?api=1&amp;query=Rushere%2C%20Uganda"
+              target="_blank"
+              rel="noopener"
+            >
+              Google Maps
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="panel route-maps-panel" aria-labelledby="routeMapsTitle">
+        <div class="route-maps-content">
+          <p class="route-maps-intro" style="color:#47b24a !important">Choose a race distance to view or download map.</p>
+          <div class="route-map-shell">
+            <div class="route-map-display" id="routeMapDisplay" data-distance="5" aria-live="polite">
+              <img id="routeMapImage" alt="">
+              <div class="route-map-placeholder">
+                <p class="route-map-current" id="routeMapCurrent">5KM Route Map</p>
+                <p>COMING SOON</p>
+              </div>
+            </div>
+            <div class="route-map-controls">
+              <label class="route-distance-field" for="routeDistance">
+                <span style="color:#47b24a !important">Race View</span>
+                <select class="route-distance-select" id="routeDistance">
+                  <option value="5" data-map="" data-filename="Rushere-Marathon-5KM-Map.png">5 KM</option>
+                  <option value="10" data-map="" data-filename="Rushere-Marathon-10KM-Map.png">10 KM</option>
+                  <option value="21" data-map="" data-filename="Rushere-Marathon-21KM-Map.png">21 KM</option>
+                  <option value="42" data-map="" data-filename="Rushere-Marathon-42KM-Map.png">42 KM</option>
+                </select>
+              </label>
+              <button class="route-download-button" id="routeDownload" type="button">DOWNLAOD</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel photos-access-panel" aria-labelledby="photosAccessTitle">
+        <div class="photos-access-content">
+          <h2 class="photos-access-title" id="photosAccessTitle" style="color:#47b24a !important">Event Photos</h2>
+          <p class="photos-access-copy" style="color:#47b24a !important">View and Download Photographs</p>
+          <a
+            class="action photos-access-button"
+            id="accessPhotos"
+            href="https://drive.google.com/drive/folders/1WsxgpMfQ5ox2VGUibnp-v96KDE2BG6wZ?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Access Photos</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="map-upload-toast" id="mapUploadToast" role="status" aria-live="polite">
+    COMING SOON
+  </div>
+
+  <div class="route-map-viewer" id="photosPopup" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="photosPopupTitle">
+    <div class="route-map-dialog"><div class="route-map-toolbar"><button class="route-map-back" id="photosPopupBack" type="button">Back to photos</button><h2 class="route-map-viewer-title" id="photosPopupTitle">Event Photos</h2></div><p class="route-map-message">Photos wil appear on the event day</p></div>
+  </div>
+
+  <!-- =======================================================
+       PAGE FOOTER
+  ======================================================== -->
+
+  <footer class="page-footer">
+    <div class="page-footer-artwork" role="img" aria-label="Rushere Marathon course illustration">
+      <p class="page-footer-signature">SACIVA x KAIZEN</p>
+    </div>
+  </footer>
+
+
+  <!-- =======================================================
+       MUSIC BUTTON
+  ======================================================== -->
+
+  <button
+    class="music-button"
+    id="musicButton"
+    type="button"
+    aria-label="Play music"
+  >
+    &#9835;
+  </button>
+
+
+  <audio
+    id="music"
+    autoplay
+    loop
+    playsinline
+    preload="auto"
+    src="./Afrola - Bird Creek.mp3"
+  ></audio>
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+
+  <script>
+
+
+
+
+    /* =======================================================
+       SCROLL REVEAL OBSERVER
+    ======================================================== */
+
+    const revealObserver =
+      new IntersectionObserver(
+
+        (entries) => {
+
+          entries.forEach(
+            (entry) => {
+
+              if (
+                !entry.isIntersecting
+              ) {
+                return;
+              }
+              entry.target.classList.add(
+                "is-visible"
+              );
+              revealObserver.unobserve(
+                entry.target
+              );
+
+            }
+          );
+        },
+        {
+          threshold: .22,
+
+          rootMargin:
+            "0px 0px -8% 0px"
+        }
+      );
+    /* =======================================================
+       REGISTER REVEAL ELEMENTS
+    ======================================================== */
+
+    document
+      .querySelectorAll(".reveal")
+      .forEach(
+        (element) => {
+
+          revealObserver.observe(
+            element
+          );
+        }
+      );
+    /* =======================================================
+       FIRST PAGE REVEAL
+    ======================================================== */
+
+    function revealHero() {
+      document
+        .querySelectorAll(
+          ".panel:first-child .reveal"
+        )
+        .forEach(
+          (element, index) => {
+
+            window.setTimeout(
+              () => {
+
+                element.classList.add(
+                  "is-visible"
+                );
+
+              },
+              180 +
+              index * 210
+            );
+          }
+        );
+    }
+
+    /* =======================================================
+       COUNTDOWN
+    ======================================================== */
+
+    const eventDayStart =
+      new Date(
+        "2026-09-12T00:00:00+03:00"
+      ).getTime();
+
+    const eventDayEnd =
+      new Date(
+        "2026-09-13T00:00:00+03:00"
+      ).getTime();
+
+    function updateCountdown() {
+      const now =
+        Date.now();
+      const countdown =
+        document.getElementById(
+          "eventCountdown"
+        );
+
+      const todayMessage =
+        document.getElementById(
+          "countdownToday"
+        );
+
+      const isEventDay =
+        now >= eventDayStart &&
+        now < eventDayEnd;
+
+      countdown.classList.toggle(
+        "is-today",
+        isEventDay
+      );
+      countdown.setAttribute(
+        "aria-label",
+        isEventDay
+          ? "The event is today"
+          : "Event countdown"
+      );
+
+      todayMessage.setAttribute(
+        "aria-hidden",
+        String(!isEventDay)
+      );
+
+      if (isEventDay) {
+        return;
+      }
+
+      const difference =
+        Math.max(
+          0,
+          eventDayStart -
+          now
+        );
+
+
+      const day =
+        86400000;
+
+      const hour =
+        3600000;
+
+      const minute =
+        60000;
+
+
+      document.getElementById(
+        "days"
+      ).textContent =
+
+        String(
+          Math.floor(
+            difference / day
+          )
+        ).padStart(
+          2,
+          "0"
+        );
+
+
+      document.getElementById(
+        "hours"
+      ).textContent =
+
+        String(
+          Math.floor(
+            (difference % day) /
+            hour
+          )
+        ).padStart(
+          2,
+          "0"
+        );
+
+
+      document.getElementById(
+        "minutes"
+      ).textContent =
+
+        String(
+          Math.floor(
+            (difference % hour) /
+            minute
+          )
+        ).padStart(
+          2,
+          "0"
+        );
+
+
+      document.getElementById(
+        "seconds"
+      ).textContent =
+
+        String(
+          Math.floor(
+            (difference % minute) /
+            1000
+          )
+        ).padStart(
+          2,
+          "0"
+        );
+
+    }
+
+
+    /* Run countdown immediately */
+
+    updateCountdown();
+
+
+    /* Update every second */
+
+    window.setInterval(
+      updateCountdown,
+      1000
+    );
+
+
+    /* =======================================================
+       MUSIC
+    ======================================================== */
+
+    const musicButton =
+      document.getElementById(
+        "musicButton"
+      );
+
+    const music =
+      document.getElementById(
+        "music"
+      );
+
+    async function startMusic() {
+
+      if (!music) {
+        return;
+      }
+
+      try {
+
+        await music.play();
+
+        musicButton.textContent =
+          "Ã¢â€¦Â¡";
+
+        musicButton.setAttribute(
+          "aria-label",
+          "Pause music"
+        );
+
+        musicButton.textContent =
+          "\u2016";
+
+      }
+
+      catch (error) {
+
+        /*
+          Some browsers can still block automatic playback.
+          In that case the music button remains available.
+        */
+
+        musicButton.textContent =
+          "Ã¢â„¢Âª";
+
+        musicButton.setAttribute(
+          "aria-label",
+          "Play music"
+
+        );
+
+        musicButton.textContent =
+          "\u266B";
+
+      }
+
+    }
+
+
+    musicButton.addEventListener(
+      "click",
+      async () => {
+
+
+        /*
+          If you have not added the
+          audio element yet.
+        */
+
+        if (!music) {
+
+          alert(
+            "The background music file could not be loaded."
+          );
+
+          return;
+        }
+
+
+        /* Play music */
+
+        if (music.paused) {
+
+          await startMusic();
+
+        }
+
+
+        /* Pause music */
+
+        else {
+
+          music.pause();
+
+          musicButton.textContent =
+            "Ã¢â„¢Âª";
+
+          musicButton.setAttribute(
+            "aria-label",
+            "Play music"
+          );
+
+          musicButton.textContent =
+            "\u266B";
+
+        }
+
+      }
+    );
+
+    const routeDistance = document.getElementById("routeDistance");
+    const routeDownload = document.getElementById("routeDownload");
+    const routeMapDisplay = document.getElementById("routeMapDisplay");
+    const routeMapImage = document.getElementById("routeMapImage");
+    const routeMapCurrent = document.getElementById("routeMapCurrent");
+    const mapUploadToast = document.getElementById("mapUploadToast");
+    let mapUploadToastTimer = 0;
+
+    function updateRouteMap() {
+      const selectedRoute = routeDistance.options[routeDistance.selectedIndex];
+      const distance = selectedRoute.textContent.trim();
+      const mapSource = selectedRoute.dataset.map;
+
+      routeMapCurrent.textContent = `${distance.replace(/\s+/g, "")} Route Map`;
+      routeMapDisplay.dataset.distance = selectedRoute.value;
+      routeMapCurrent.style.setProperty("color", "#e5eedf", "important");
+      routeMapDisplay.querySelectorAll(".route-map-placeholder p").forEach((line) => {
+        line.style.setProperty("color", "#e5eedf", "important");
+      });
+      routeMapDisplay.classList.toggle("has-map", Boolean(mapSource));
+
+      if (mapSource) {
+        routeMapImage.src = mapSource;
+        routeMapImage.alt = `${distance} Rushere Marathon route map`;
+      } else {
+        routeMapImage.removeAttribute("src");
+        routeMapImage.alt = "";
+      }
+    }
+
+    routeDistance.addEventListener("change", updateRouteMap);
+    routeDownload.addEventListener("click", () => {
+      const selectedRoute = routeDistance.options[routeDistance.selectedIndex];
+      const mapSource = selectedRoute.dataset.map;
+      if (!mapSource) {
+        window.clearTimeout(mapUploadToastTimer);
+        mapUploadToast.classList.add("is-visible");
+        mapUploadToastTimer = window.setTimeout(() => {
+          mapUploadToast.classList.remove("is-visible");
+        }, 2400);
+        return;
+      }
+
+      const downloadLink = document.createElement("a");
+      downloadLink.href = mapSource;
+      downloadLink.download = selectedRoute.dataset.filename;
+      downloadLink.click();
+    });
+    updateRouteMap();
+
+    const accessPhotos = document.getElementById("accessPhotos");
+    const photosPopup = document.getElementById("photosPopup");
+    const photosPopupBack = document.getElementById("photosPopupBack");
+
+    function closePhotosPopup() {
+      photosPopup.classList.remove("is-open");
+      photosPopup.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      accessPhotos.focus();
+    }
+
+    accessPhotos.addEventListener("click", (event) => {
+      event.preventDefault();
+      photosPopup.classList.add("is-open");
+      photosPopup.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      photosPopupBack.focus();
+    });
+
+    photosPopupBack.addEventListener("click", closePhotosPopup);
+    photosPopup.addEventListener("click", (event) => { if (event.target === photosPopup) closePhotosPopup(); });
+    document.addEventListener("keydown", (event) => { if (event.key === "Escape" && photosPopup.classList.contains("is-open")) closePhotosPopup(); });
+
+    /* Hero transition replicated from helpNYAKAJU.html. */
+    const heroSources = ["./one.jpg", "./two.jpg", "./three.jpg", "./four.jpg"];
+    const heroStage = document.querySelector(".hero-slideshow");
+    const heroCurrentImage = document.getElementById("heroCurrentImage");
+    const heroNextImage = document.getElementById("heroNextImage");
+    const heroPreviewImage = document.getElementById("heroPreviewImage");
+    const heroNextCard = document.getElementById("heroNextCard");
+    const heroReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let heroIndex = 0;
+    let heroIsTransitioning = false;
+
+    heroSources.slice(1).forEach((source) => {
+      const preloadImage = new Image();
+      preloadImage.src = source;
+    });
+
+    function setHeroImagePosition(image, source) {
+      image.style.objectPosition = source.includes("portrait.png") ? "center 42%" : "center";
+    }
+
+    function advanceHero() {
+      if (heroIsTransitioning) return;
+      heroIsTransitioning = true;
+
+      const nextIndex = (heroIndex + 1) % heroSources.length;
+      const nextSource = heroSources[nextIndex];
+      heroNextImage.src = nextSource;
+      setHeroImagePosition(heroNextImage, nextSource);
+      heroStage.classList.add("is-switching");
+
+      window.setTimeout(() => {
+        heroCurrentImage.src = nextSource;
+        setHeroImagePosition(heroCurrentImage, nextSource);
+        heroIndex = nextIndex;
+
+        const upcomingSource = heroSources[(heroIndex + 1) % heroSources.length];
+        heroNextImage.src = upcomingSource;
+        heroPreviewImage.src = upcomingSource;
+        setHeroImagePosition(heroNextImage, upcomingSource);
+        setHeroImagePosition(heroPreviewImage, upcomingSource);
+        heroStage.classList.remove("is-switching");
+        heroIsTransitioning = false;
+      }, heroReducedMotion ? 20 : 1400);
+    }
+
+    window.setInterval(advanceHero, 4800);
+    heroNextCard.addEventListener("click", advanceHero);
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight" || event.key === " ") advanceHero();
+    });
+
+    /* Restore the original automatic music attempt. */
+    startMusic();
+
+    music.addEventListener("canplay", startMusic, { once: true });
+    window.addEventListener("load", startMusic, { once: true });
+    music.load();
+
+    /* Retry after the first interaction when a browser blocks audible autoplay. */
+    function retryMusicAfterInteraction() {
+      if (music && music.paused) startMusic();
+    }
+
+    document.addEventListener("pointerdown", retryMusicAfterInteraction, { once: true, passive: true });
+    document.addEventListener("keydown", retryMusicAfterInteraction, { once: true });
+
+
+  </script>
+
+</body>
+</html>
