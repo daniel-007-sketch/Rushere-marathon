@@ -2035,15 +2035,13 @@
     }
 
     .music-button {
-      display: grid !important; visibility: visible !important; opacity: 1 !important;
+      display: grid !important; place-items: center !important; visibility: visible !important; opacity: 1 !important;
       position: fixed !important; right: max(20px, env(safe-area-inset-right)) !important;
       bottom: max(20px, env(safe-area-inset-bottom)) !important; z-index: 9999 !important;
       color: #fff !important; background: #d8ff31 !important; font-size: 0 !important;
       pointer-events: auto !important;
     }
-    .music-button::before { content: ""; width: 27px; height: 27px; background: center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='13' cy='4' r='2'/%3E%3Cpath d='m7 21 3-5 2-4 3 3 2 6M6 12l4-3 3 1 4-2M10 9l-2 5-4 2'/%3E%3C/svg%3E"); transform: translateX(-4px); }
-    .music-button::after { content: ""; position: absolute; right: 8px; bottom: 9px; width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 8px solid #fff; }
-    .music-button[aria-label="Pause music"]::after { width: 8px; height: 10px; border: 0; background: linear-gradient(to right,#fff 0 3px,transparent 3px 5px,#fff 5px 8px); }
+    .music-button::before { content: ""; width: 27px; height: 27px; background: center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='13' cy='4' r='2'/%3E%3Cpath d='m7 21 3-5 2-4 3 3 2 6M6 12l4-3 3 1 4-2M10 9l-2 5-4 2'/%3E%3C/svg%3E"); }
 
     .route-maps-panel { min-height: 630px; padding: clamp(42px,8vw,72px) clamp(18px,5vw,42px) !important; background: transparent !important; }
     .route-maps-content { width: min(100%, calc(310px + clamp(32px, 10vw, 56px))); margin: auto; background: transparent; }
@@ -2611,7 +2609,7 @@
     }
 
     /* Final site color palette. */
-    html body *:not(.hero-title):not(.hero-title *):not(.page-one-scroll-cue):not(.page-one-scroll-cue *):not(.route-map-message):not(.route-map-message *):not(.page-footer-signature):not(.page-footer-signature *) {
+    html body *:not(.hero-title):not(.hero-title *):not(.page-one-scroll-cue):not(.page-one-scroll-cue *):not(.route-map-message):not(.route-map-message *):not(.page-footer-signature):not(.page-footer-signature *):not(button):not(.action):not(.route-map-action):not(.route-map-back):not(.route-distance-select):not(.route-download-button):not(.photos-access-button):not(.music-button) {
       color: #082314 !important;
     }
 
@@ -2670,7 +2668,7 @@
       html body .route-map-action:hover,
       html body .route-map-back:hover,
       html body .route-distance-select:hover {
-        color: #ffffff !important;
+        color: #e5eedf !important;
         background-color: #006a39 !important;
         border-color: #006a39 !important;
       }
@@ -2715,13 +2713,31 @@
       color: #006a39 !important;
     }
 
+    html body button:not(.music-button):not(.route-map-back),
+    html body .action,
+    html body .route-map-action,
+    html body .route-distance-select,
+    html body .route-distance-select option,
+    html body .route-download-button,
+    html body .photos-access-button {
+      color: #006a39 !important;
+    }
+
     html body .invitation .paper-scroll a.action.google-maps-button:hover,
     html body .invitation .paper-scroll a.action.google-maps-button:focus-visible,
     html body .invitation .paper-scroll a.action.photos-access-button:hover,
     html body .invitation .paper-scroll a.action.photos-access-button:focus-visible,
     html body .invitation .paper-scroll .route-maps-panel .route-maps-content button.route-download-button:hover,
     html body .invitation .paper-scroll .route-maps-panel .route-maps-content button.route-download-button:focus-visible {
-      color: #ffffff !important;
+      color: #e5eedf !important;
+    }
+
+    #photosPopup .route-map-viewer-title {
+      color: #006a39 !important;
+    }
+
+    #photosPopup .route-map-back {
+      color: #e5eedf !important;
     }
 
   </style>
@@ -3228,16 +3244,10 @@
 
         await music.play();
 
-        musicButton.textContent =
-          "Ã¢â€¦Â¡";
-
         musicButton.setAttribute(
           "aria-label",
           "Pause music"
         );
-
-        musicButton.textContent =
-          "\u2016";
 
       }
 
@@ -3248,17 +3258,11 @@
           In that case the music button remains available.
         */
 
-        musicButton.textContent =
-          "Ã¢â„¢Âª";
-
         musicButton.setAttribute(
           "aria-label",
           "Play music"
 
         );
-
-        musicButton.textContent =
-          "\u266B";
 
       }
 
@@ -3300,16 +3304,12 @@
 
           music.pause();
 
-          musicButton.textContent =
-            "Ã¢â„¢Âª";
-
           musicButton.setAttribute(
             "aria-label",
             "Play music"
           );
 
-          musicButton.textContent =
-            "\u266B";
+          music.currentTime = 0;
 
         }
 
