@@ -2614,7 +2614,7 @@
     }
 
     /* Final site color palette. */
-    html body *:not(.hero-title):not(.hero-title *):not(.page-one-scroll-cue):not(.page-one-scroll-cue *):not(.route-map-message):not(.route-map-message *):not(.page-footer-signature):not(.page-footer-signature *):not(button):not(.action):not(.route-map-action):not(.route-map-back):not(.route-distance-select):not(.route-download-button):not(.photos-access-button):not(.music-button) {
+    html body *:not(.hero-title):not(.hero-title *):not(.page-one-scroll-cue):not(.page-one-scroll-cue *):not(.route-map-message):not(.route-map-message *):not(.page-footer-signature):not(.page-footer-signature *):not(.accommodation-panel):not(.accommodation-panel *):not(button):not(.action):not(.route-map-action):not(.route-map-back):not(.route-distance-select):not(.route-download-button):not(.photos-access-button):not(.music-button) {
       color: #082314 !important;
     }
 
@@ -2743,6 +2743,254 @@
 
     #photosPopup .route-map-back {
       color: #e5eedf !important;
+    }
+
+    /* Accommodation selector and photo carousel. */
+    .panel.accommodation-panel {
+      min-height: 0 !important;
+      height: auto !important;
+      padding: 0 !important;
+      background: transparent !important;
+    }
+
+    .accommodation-content {
+      width: min(100%, 620px) !important;
+      margin: auto;
+      padding: 28px clamp(14px, 4vw, 22px) 32px !important;
+      text-align: center;
+    }
+
+    .accommodation-title {
+      margin: 0 0 7px;
+      color: #006a39 !important;
+      font-size: clamp(1.45rem, 5vw, 2rem);
+      line-height: 1.1;
+    }
+
+    .accommodation-intro {
+      margin: 0 0 14px;
+      color: #006a39 !important;
+      font-size: .76rem;
+      line-height: 1.35;
+    }
+
+    .accommodation-shell {
+      overflow: hidden;
+      border: 1px solid #b8bdb7;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .74);
+    }
+
+    .accommodation-gallery {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: clamp(190px, 32vw, 270px);
+      overflow: hidden;
+      background: #006a39;
+    }
+
+    .accommodation-image {
+      display: none;
+      width: 100%;
+      height: clamp(190px, 32vw, 270px);
+      object-fit: cover;
+    }
+
+    .accommodation-gallery.has-photo .accommodation-image {
+      display: block;
+    }
+
+    .accommodation-gallery.has-photo .accommodation-placeholder {
+      display: none;
+    }
+
+    .accommodation-placeholder {
+      display: grid;
+      gap: 8px;
+      padding: 40px 58px;
+      color: #e5eedf !important;
+      text-align: center;
+    }
+
+    .accommodation-placeholder strong,
+    .accommodation-placeholder span {
+      color: #e5eedf !important;
+    }
+
+    .accommodation-placeholder strong {
+      font-size: clamp(1rem, 3.5vw, 1.35rem);
+      font-weight: 600 !important;
+    }
+
+    .accommodation-placeholder span {
+      font-size: .68rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    html body #accommodationGallery button.accommodation-arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 52px;
+      padding: 0;
+      border: 1px solid rgba(229, 238, 223, .72) !important;
+      border-radius: 0;
+      color: #e5eedf !important;
+      background: rgba(8, 35, 20, .5) !important;
+      font-size: 1.6rem;
+      line-height: 1;
+      transform: translateY(-50%);
+    }
+
+    html body #accommodationGallery button.accommodation-arrow:hover,
+    html body #accommodationGallery button.accommodation-arrow:focus-visible {
+      color: #082314 !important;
+      background: #d8ff31 !important;
+      border-color: #d8ff31 !important;
+      transform: translateY(-50%) !important;
+    }
+
+    html body #accommodationGallery .accommodation-arrow--previous {
+      left: 0;
+      border-left: 0 !important;
+    }
+
+    html body #accommodationGallery .accommodation-arrow--next {
+      right: 0;
+      border-right: 0 !important;
+    }
+
+    .accommodation-counter {
+      position: absolute;
+      right: 10px;
+      bottom: 9px;
+      z-index: 2;
+      margin: 0;
+      padding: 5px 8px;
+      border-radius: 999px;
+      color: #e5eedf !important;
+      background: rgba(8, 35, 20, .68);
+      font-size: .64rem;
+      letter-spacing: .08em;
+    }
+
+    .accommodation-controls {
+      display: grid;
+      grid-template-columns: minmax(190px, 240px) auto;
+      gap: 12px;
+      align-items: start;
+      justify-content: center;
+      padding: 13px;
+      border-top: 1px solid #b8bdb7;
+    }
+
+    .accommodation-field {
+      display: grid;
+      grid-template-rows: auto 40px;
+      gap: 7px;
+      min-width: 0;
+      text-align: left;
+    }
+
+    .accommodation-field span {
+      color: #006a39 !important;
+      font-size: .65rem;
+      font-weight: 600 !important;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .accommodation-select {
+      width: 100% !important;
+      max-width: none !important;
+      min-height: 40px !important;
+      padding: 7px 36px 7px 13px !important;
+      font-size: .92rem;
+    }
+
+    .accommodation-select:focus-visible {
+      outline: 2px solid #006a39;
+      outline-offset: 2px;
+    }
+
+    .accommodation-price-wrap {
+      display: grid;
+      grid-template-rows: auto 40px;
+      gap: 7px;
+      min-width: 126px;
+      text-align: right;
+    }
+
+    .accommodation-price-label {
+      display: block;
+      color: #006a39 !important;
+      font-size: .62rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .accommodation-price {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 8px 16px;
+      border: 1px solid #b8bdb7;
+      border-radius: 999px;
+      color: #006a39 !important;
+      background: transparent;
+      font-size: 1rem;
+      font-weight: 600 !important;
+      white-space: nowrap;
+    }
+
+    .accommodation-breakfast {
+      grid-column: 1 / -1;
+      margin: -1px 0 0;
+      color: #006a39 !important;
+      font-size: .68rem;
+      line-height: 1.35;
+      text-align: right;
+    }
+
+    @media (max-width: 520px) {
+      .accommodation-controls {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 9px;
+        padding: 10px;
+      }
+
+      .accommodation-select {
+        width: 100% !important;
+        max-width: none !important;
+        padding-inline: 11px 28px !important;
+        font-size: .78rem;
+      }
+
+      .accommodation-field span,
+      .accommodation-price-label {
+        font-size: .6rem;
+        letter-spacing: .08em;
+      }
+
+      .accommodation-price-wrap {
+        min-width: 102px;
+      }
+
+      .accommodation-price {
+        font-size: .82rem;
+      }
+
+      .accommodation-breakfast {
+        font-size: .63rem;
+      }
     }
 
   </style>
@@ -2927,6 +3175,44 @@
                 </select>
               </label>
               <button class="route-download-button" id="routeDownload" type="button">DOWNLOAD</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel accommodation-panel" aria-labelledby="accommodationTitle">
+        <div class="accommodation-content">
+          <h2 class="accommodation-title" id="accommodationTitle">Accommodation</h2>
+          <p class="accommodation-intro">Choose accommodation to view spaces.</p>
+
+          <div class="accommodation-shell">
+            <div class="accommodation-gallery" id="accommodationGallery" aria-live="polite">
+              <img class="accommodation-image" id="accommodationImage" alt="">
+              <div class="accommodation-placeholder" id="accommodationPlaceholder">
+                <strong id="accommodationPlaceholderTitle">Canon Buningwire</strong>
+                <span id="accommodationPlaceholderSlot">Photo 1 upload pending</span>
+              </div>
+              <button class="accommodation-arrow accommodation-arrow--previous" id="accommodationPrevious" type="button" aria-label="View previous accommodation photo">&#8249;</button>
+              <button class="accommodation-arrow accommodation-arrow--next" id="accommodationNext" type="button" aria-label="View next accommodation photo">&#8250;</button>
+              <p class="accommodation-counter" id="accommodationCounter">1 / 3</p>
+            </div>
+
+            <div class="accommodation-controls">
+              <label class="accommodation-field" for="accommodationSelect">
+                <span>Stay View</span>
+                <select class="route-distance-select accommodation-select" id="accommodationSelect">
+                  <option value="canon-buningwire">Canon Buningwire</option>
+                  <option value="step-in-lodge">Step in lodge</option>
+                  <option value="ihunde-farm-lodge">Ihunde farm lodge</option>
+                </select>
+              </label>
+
+              <div class="accommodation-price-wrap" aria-live="polite">
+                <span class="accommodation-price-label">Price</span>
+                <strong class="accommodation-price" id="accommodationPrice">UGX 60,000</strong>
+              </div>
+
+              <p class="accommodation-breakfast">Inclusive of breakfast</p>
             </div>
           </div>
         </div>
@@ -3370,6 +3656,69 @@
       downloadLink.click();
     });
     updateRouteMap();
+
+    const accommodationPackages = {
+      "canon-buningwire": {
+        name: "Canon Buningwire",
+        price: "UGX 60,000",
+        photos: ["", "", ""]
+      },
+      "step-in-lodge": {
+        name: "Step in lodge",
+        price: "UGX 40,000",
+        photos: ["", "", ""]
+      },
+      "ihunde-farm-lodge": {
+        name: "Ihunde farm lodge",
+        price: "UGX 200,000",
+        photos: ["", "", ""]
+      }
+    };
+
+    const accommodationSelect = document.getElementById("accommodationSelect");
+    const accommodationGallery = document.getElementById("accommodationGallery");
+    const accommodationImage = document.getElementById("accommodationImage");
+    const accommodationPlaceholderTitle = document.getElementById("accommodationPlaceholderTitle");
+    const accommodationPlaceholderSlot = document.getElementById("accommodationPlaceholderSlot");
+    const accommodationCounter = document.getElementById("accommodationCounter");
+    const accommodationPrice = document.getElementById("accommodationPrice");
+    const accommodationPrevious = document.getElementById("accommodationPrevious");
+    const accommodationNext = document.getElementById("accommodationNext");
+    let accommodationPhotoIndex = 0;
+
+    function updateAccommodation() {
+      const selectedPackage = accommodationPackages[accommodationSelect.value];
+      const photoSource = selectedPackage.photos[accommodationPhotoIndex];
+      const photoNumber = accommodationPhotoIndex + 1;
+
+      accommodationPrice.textContent = selectedPackage.price;
+      accommodationCounter.textContent = `${photoNumber} / ${selectedPackage.photos.length}`;
+      accommodationPlaceholderTitle.textContent = selectedPackage.name;
+      accommodationPlaceholderSlot.textContent = `Photo ${photoNumber} upload pending`;
+      accommodationGallery.classList.toggle("has-photo", Boolean(photoSource));
+
+      if (photoSource) {
+        accommodationImage.src = photoSource;
+        accommodationImage.alt = `${selectedPackage.name} accommodation, photo ${photoNumber} of ${selectedPackage.photos.length}`;
+      } else {
+        accommodationImage.removeAttribute("src");
+        accommodationImage.alt = "";
+      }
+    }
+
+    function changeAccommodationPhoto(direction) {
+      const photoCount = accommodationPackages[accommodationSelect.value].photos.length;
+      accommodationPhotoIndex = (accommodationPhotoIndex + direction + photoCount) % photoCount;
+      updateAccommodation();
+    }
+
+    accommodationSelect.addEventListener("change", () => {
+      accommodationPhotoIndex = 0;
+      updateAccommodation();
+    });
+    accommodationPrevious.addEventListener("click", () => changeAccommodationPhoto(-1));
+    accommodationNext.addEventListener("click", () => changeAccommodationPhoto(1));
+    updateAccommodation();
 
     const accessPhotos = document.getElementById("accessPhotos");
     const photosPopup = document.getElementById("photosPopup");
