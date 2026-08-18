@@ -3002,6 +3002,130 @@
       }
     }
 
+    /* Reception schedule: isolated timeline inserted before Route Maps. */
+    html body .reception-schedule-card {
+      width: 100%;
+      max-width: 450px;
+      min-height: 0 !important;
+      margin-inline: auto;
+      padding: clamp(40px, 8vw, 56px) 0 !important;
+      box-sizing: border-box;
+      background: transparent !important;
+      color: #7d5b00 !important;
+    }
+
+    html body .reception-schedule-content {
+      width: min(72%, 310px);
+      margin-inline: auto;
+      padding: 0;
+      color: #7d5b00 !important;
+    }
+
+    html body .reception-schedule-title {
+      margin: 0 auto clamp(12px, 3vw, 18px);
+      color: #7d5b00 !important;
+      font-family: "Cinzel Decorative", serif !important;
+      font-size: clamp(1.3rem, 4.3vw, 1.75rem);
+      font-weight: 700 !important;
+      line-height: 1.1;
+      text-align: center;
+    }
+
+    html body .reception-schedule-timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr clamp(34px, 10vw, 44px) 1fr;
+      grid-template-rows: repeat(7, 1fr);
+      width: 100%;
+      height: clamp(455px, 112vw, 525px);
+      margin-inline: auto;
+      color: #7d5b00 !important;
+      transform: translateX(-8px);
+    }
+
+    .reception-schedule-line {
+      position: absolute;
+      inset-block: 0;
+      left: 50%;
+      width: 1px;
+      background: rgba(122, 31, 43, 0.38);
+      transform: translateX(-50%);
+    }
+
+    .reception-schedule-marker {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      z-index: 2;
+      display: grid;
+      width: clamp(44px, 12vw, 52px);
+      height: clamp(44px, 12vw, 52px);
+      place-items: center;
+      border-radius: 50%;
+      background: #47b24a;
+      box-shadow: 0 7px 8px rgba(80, 39, 28, 0.22);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: top 0.15s linear;
+    }
+
+    .reception-schedule-marker img {
+      display: block;
+      width: clamp(30px, 8vw, 36px);
+      height: clamp(30px, 8vw, 36px);
+      object-fit: contain;
+    }
+
+    html body .reception-schedule-side {
+      position: relative;
+      display: flex;
+      min-width: 0;
+      align-items: center;
+      color: #7d5b00 !important;
+      font-family: Montserrat, sans-serif !important;
+      line-height: 1.25;
+      opacity: 0.38;
+      transform: scale(0.96);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    html body .reception-schedule-side.is-active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    html body .reception-schedule-time {
+      grid-column: 1;
+      justify-content: flex-end;
+      padding-right: clamp(8px, 2.5vw, 12px);
+      font-size: clamp(0.96rem, 3.1vw, 1.15rem);
+      font-weight: 600 !important;
+      text-align: right;
+    }
+
+    html body .reception-schedule-event {
+      grid-column: 3;
+      justify-content: flex-start;
+      padding-left: clamp(8px, 2.5vw, 12px);
+      font-size: clamp(0.88rem, 2.9vw, 1.05rem);
+      font-weight: 500 !important;
+      overflow-wrap: anywhere;
+      text-align: left;
+    }
+
+    @media (max-width: 520px) {
+      html body .reception-schedule-card {
+        max-width: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reception-schedule-marker,
+      html body .reception-schedule-side {
+        transition-duration: 0.001ms !important;
+      }
+    }
+
   </style>
   <!-- Mobile-first implementation notes: ./mobile.md -->
 </head>
@@ -3162,6 +3286,40 @@
 
       </section>
 
+      <section class="panel reception-schedule-card" aria-labelledby="receptionScheduleTitle">
+        <div class="reception-schedule-content">
+          <h2 class="reception-schedule-title" id="receptionScheduleTitle">Event Program</h2>
+
+          <div class="reception-schedule-timeline" id="receptionScheduleTimeline">
+            <div class="reception-schedule-line" aria-hidden="true"></div>
+            <div class="reception-schedule-marker" id="receptionScheduleMarker" aria-hidden="true">
+              <img src="./running-marker.png" alt="">
+            </div>
+
+            <div class="reception-schedule-side reception-schedule-time is-active" data-schedule-index="0">5:30am</div>
+            <div class="reception-schedule-side reception-schedule-event is-active" data-schedule-index="0">Arrival at venue</div>
+
+            <div class="reception-schedule-side reception-schedule-time" data-schedule-index="1">6:00am</div>
+            <div class="reception-schedule-side reception-schedule-event" data-schedule-index="1">Warm up</div>
+
+            <div class="reception-schedule-side reception-schedule-time" data-schedule-index="2">6:30am</div>
+            <div class="reception-schedule-side reception-schedule-event" data-schedule-index="2">Flag off</div>
+
+            <div class="reception-schedule-side reception-schedule-time" data-schedule-index="3">9:00am</div>
+            <div class="reception-schedule-side reception-schedule-event" data-schedule-index="3">Stretching</div>
+
+            <div class="reception-schedule-side reception-schedule-time" data-schedule-index="4">9:30am</div>
+            <div class="reception-schedule-side reception-schedule-event" data-schedule-index="4">Awarding 21km runners</div>
+
+            <div class="reception-schedule-side reception-schedule-time" data-schedule-index="5">12:30pm</div>
+            <div class="reception-schedule-side reception-schedule-event" data-schedule-index="5">Awarding 42km runners</div>
+
+            <div class="reception-schedule-side reception-schedule-time" data-schedule-index="6">1:00pm</div>
+            <div class="reception-schedule-side reception-schedule-event" data-schedule-index="6">Closing address</div>
+          </div>
+        </div>
+      </section>
+
       <section class="panel route-maps-panel" aria-labelledby="routeMapsTitle">
         <div class="route-maps-content">
           <h2 class="route-maps-title accommodation-title" id="routeMapsTitle" style="color:#006a39 !important">Route Maps</h2>
@@ -3300,6 +3458,66 @@
   ======================================================== -->
 
   <script>
+
+    /* Isolated, scroll-driven reception schedule. */
+    (() => {
+      function initializeReceptionSchedule() {
+        const timeline = document.getElementById("receptionScheduleTimeline");
+        const marker = document.getElementById("receptionScheduleMarker");
+
+        if (!timeline || !marker) {
+          return;
+        }
+
+        const sides = Array.from(
+          timeline.querySelectorAll(".reception-schedule-side[data-schedule-index]")
+        );
+        const rowCount = new Set(
+          sides.map((side) => side.dataset.scheduleIndex)
+        ).size;
+
+        if (!rowCount) {
+          return;
+        }
+
+        let updateRequested = false;
+
+        function updateReceptionSchedule() {
+          const timelineRect = timeline.getBoundingClientRect();
+          const viewportCenter = window.innerHeight * 0.5;
+          const rawProgress = (viewportCenter - timelineRect.top) / timelineRect.height;
+          const progress = Math.max(0, Math.min(1, rawProgress));
+          const activeIndex = Math.round(progress * (rowCount - 1));
+
+          marker.style.top = `${progress * 100}%`;
+          sides.forEach((side) => {
+            const isActive = Number(side.dataset.scheduleIndex) === activeIndex;
+            side.classList.toggle("is-active", isActive);
+          });
+
+          updateRequested = false;
+        }
+
+        function requestReceptionScheduleUpdate() {
+          if (updateRequested) {
+            return;
+          }
+
+          updateRequested = true;
+          window.requestAnimationFrame(updateReceptionSchedule);
+        }
+
+        window.addEventListener("scroll", requestReceptionScheduleUpdate, { passive: true });
+        window.addEventListener("resize", requestReceptionScheduleUpdate);
+        updateReceptionSchedule();
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initializeReceptionSchedule, { once: true });
+      } else {
+        initializeReceptionSchedule();
+      }
+    })();
 
 
 
