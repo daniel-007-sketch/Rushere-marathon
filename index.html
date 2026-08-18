@@ -2341,6 +2341,14 @@
       margin-bottom: 14px;
     }
 
+    .route-kits-notice {
+      margin: 12px auto 0;
+      color: #006a39 !important;
+      font-size: .72rem;
+      line-height: 1.45;
+      text-align: center;
+    }
+
     .route-map-display {
       min-height: clamp(155px, 28vw, 240px);
       padding: 16px;
@@ -2704,6 +2712,7 @@
     html body .page-four-panel .venue-mini .eyebrow,
     html body .page-four-panel .venue-mini .venue-name,
     html body .route-maps-panel .route-maps-intro,
+    html body .route-maps-panel .route-kits-notice,
     html body .photos-access-panel .photos-access-title,
     html body .photos-access-panel .photos-access-copy {
       color: #006a39 !important;
@@ -2924,7 +2933,7 @@
       grid-template-rows: auto 40px;
       gap: 7px;
       min-width: 126px;
-      text-align: right;
+      text-align: left;
     }
 
     .accommodation-price-label {
@@ -2952,12 +2961,12 @@
     }
 
     .accommodation-breakfast {
-      grid-column: 1 / -1;
+      grid-column: 2;
       margin: -1px 0 0;
       color: #006a39 !important;
       font-size: .68rem;
       line-height: 1.35;
-      text-align: right;
+      text-align: left;
     }
 
     @media (max-width: 520px) {
@@ -3177,6 +3186,7 @@
               <button class="route-download-button" id="routeDownload" type="button">DOWNLOAD</button>
             </div>
           </div>
+          <p class="route-kits-notice" style="color:#006a39 !important">Kits to be collected at Canon Buningwire Guest house on 11th Sept 2026</p>
         </div>
       </section>
 
@@ -3661,17 +3671,29 @@
       "canon-buningwire": {
         name: "Canon Buningwire",
         price: "UGX 60,000",
-        photos: ["", "", ""]
+        photos: [
+          "images/accommodation/canon-1.webp",
+          "images/accommodation/canon-2.webp",
+          "images/accommodation/canon-3.webp"
+        ]
       },
       "step-in-lodge": {
         name: "Step in lodge",
         price: "UGX 40,000",
-        photos: ["", "", ""]
+        photos: [
+          "images/accommodation/multi-1.webp",
+          "images/accommodation/multi-2.webp",
+          "images/accommodation/multi-3.webp"
+        ]
       },
       "ihunde-farm-lodge": {
         name: "Ihunde farm lodge",
         price: "UGX 200,000",
-        photos: ["", "", ""]
+        photos: [
+          "images/accommodation/ihunde-1.webp",
+          "images/accommodation/ihunde-2.webp",
+          "images/accommodation/ihunde-3.webp"
+        ]
       }
     };
 
