@@ -1829,6 +1829,18 @@
       filter: drop-shadow(0 3px 0 rgba(0, 0, 0, .16));
     }
 
+    .hero-date {
+      position: absolute;
+      top: max(18px, env(safe-area-inset-top));
+      left: max(18px, env(safe-area-inset-left));
+      z-index: 5;
+      display: block;
+      width: clamp(72px, 20cqw, 112px);
+      height: auto;
+      filter: drop-shadow(0 3px 8px rgba(0, 0, 0, .2));
+      pointer-events: none;
+    }
+
     .hero-next-card {
       position: absolute;
       right: var(--hero-card-right);
@@ -1901,6 +1913,11 @@
       .hero-title {
         top: 48%;
         width: 88%;
+      }
+
+      .hero-date {
+        top: max(12px, env(safe-area-inset-top));
+        left: max(12px, env(safe-area-inset-left));
       }
 
       @keyframes hero-expand-in {
@@ -3177,6 +3194,7 @@
             <img id="heroNextImage" src="./two.jpg" alt="">
           </div>
           <div class="hero-shade" aria-hidden="true"></div>
+          <img class="hero-date" src="./date.png" alt="12 September 2026">
           <h1 class="hero-title">
             <img class="hero-logo" src="./logo.png" alt="Rushere Marathon">
           </h1>
@@ -3427,7 +3445,7 @@
               </label>
 
               <p class="accommodation-contact" aria-live="polite">
-                Contact: <a id="accommodationContact" href="tel:0000000000">0000000000</a>
+                Contact: <a id="accommodationContact">07XXXXXXXX</a>
               </p>
 
               <div class="accommodation-price-wrap" aria-live="polite">
@@ -3824,7 +3842,7 @@
       "canon-buningwire": {
         name: "Canon Buningwire",
         price: "UGX 60,000",
-        contact: "0000000000",
+        contact: "07XXXXXXXX",
         photos: [
           "images/accommodation/canon-1.webp",
           "images/accommodation/canon-2.webp",
@@ -3834,7 +3852,7 @@
       "step-in-lodge": {
         name: "Step in lodge",
         price: "UGX 40,000",
-        contact: "1000000000",
+        contact: "07XXXXXXXX",
         photos: [
           "images/accommodation/multi-4.webp",
           "images/accommodation/multi-2.webp",
@@ -3872,7 +3890,11 @@
 
       accommodationPrice.textContent = selectedPackage.price;
       accommodationContact.textContent = selectedPackage.contact;
-      accommodationContact.href = `tel:${selectedPackage.contact}`;
+      if (/^\d+$/.test(selectedPackage.contact)) {
+        accommodationContact.href = `tel:${selectedPackage.contact}`;
+      } else {
+        accommodationContact.removeAttribute("href");
+      }
       accommodationCounter.textContent = `${photoNumber} / ${selectedPackage.photos.length}`;
       accommodationPlaceholderTitle.textContent = selectedPackage.name;
       accommodationPlaceholderSlot.textContent = `Photo ${photoNumber} upload pending`;
