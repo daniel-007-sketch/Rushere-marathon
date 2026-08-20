@@ -1818,32 +1818,15 @@
       justify-items: center;
       width: 92%;
       margin: 0;
-      color: #fff9e9 !important;
-      font: clamp(42px, 15cqw, 180px) / .72 "Anton", Impact, sans-serif;
-      letter-spacing: -.045em;
-      text-align: center;
-      text-transform: uppercase;
-      text-shadow: 0 3px 0 rgba(0, 0, 0, .16);
       transform: translate(-50%, -50%);
       pointer-events: none;
     }
 
-    .hero-title span {
+    .hero-logo {
       display: block;
-      white-space: nowrap;
-    }
-
-    .hero-title-rushere {
-      color: #fff9e9 !important;
-    }
-
-    .hero-title-marathon {
-      position: relative;
-      z-index: 1;
-      color: #47B24A !important;
-      font-size: .82em;
-      letter-spacing: -.055em;
-      transform: translateY(-.02em);
+      width: min(100%, 620px);
+      height: auto;
+      filter: drop-shadow(0 3px 0 rgba(0, 0, 0, .16));
     }
 
     .hero-next-card {
@@ -1918,14 +1901,6 @@
       .hero-title {
         top: 48%;
         width: 88%;
-        font-size: clamp(40px, 16cqw, 72px);
-        line-height: .74;
-        letter-spacing: -.05em;
-      }
-
-      .hero-title-marathon {
-        font-size: .72em;
-        letter-spacing: -.055em;
       }
 
       @keyframes hero-expand-in {
@@ -2335,14 +2310,6 @@
       font-weight: 400 !important;
     }
 
-    .hero-title .hero-title-rushere {
-      color: #fff9e9 !important;
-    }
-
-    .hero-title .hero-title-marathon {
-      color: #47B24A !important;
-    }
-
     html body .hero-slideshow .page-one-scroll-cue,
     html body .hero-slideshow .page-one-scroll-cue span,
     html body .hero-slideshow .page-one-scroll-cue::after {
@@ -2580,10 +2547,6 @@
     html body .route-map-message,
     html body .route-map-message * {
       color: #e5eedf !important;
-    }
-
-    html body .hero-title .hero-title-marathon {
-      color: #47B24A !important;
     }
 
     .route-map-display {
@@ -3214,9 +3177,8 @@
             <img id="heroNextImage" src="./two.jpg" alt="">
           </div>
           <div class="hero-shade" aria-hidden="true"></div>
-          <h1 class="hero-title" aria-label="Rushere Marathon">
-            <span class="hero-title-rushere">Rushere</span>
-            <span class="hero-title-marathon">Marathon</span>
+          <h1 class="hero-title">
+            <img class="hero-logo" src="./logo.png" alt="Rushere Marathon">
           </h1>
           <button class="hero-next-card" id="heroNextCard" type="button" aria-label="Show next hero image">
             <img id="heroPreviewImage" src="./two.jpg" alt="">
