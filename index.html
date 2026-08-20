@@ -2747,63 +2747,33 @@
     .prize-money-distance {
       margin: 0 0 10px;
       color: #006a39 !important;
-      font-size: .92rem;
+      font-size: clamp(1.1rem, 4vw, 1.3rem);
       font-weight: 600 !important;
       line-height: 1.2;
     }
 
     .prize-money-table {
-      position: relative;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      row-gap: 8px;
+      gap: 8px;
+      justify-items: center;
     }
 
-    .prize-money-table::before {
-      position: absolute;
-      inset-block: 0;
-      left: 50%;
-      width: 1px;
-      background: rgba(122, 31, 43, 0.38);
-      content: "";
-      transform: translateX(-50%);
-    }
-
-    .prize-money-cell {
+    .prize-money-entry {
+      margin: 0;
       color: #006a39 !important;
       font-size: .78rem;
       line-height: 1.35;
-    }
-
-    .prize-money-cell:nth-child(odd) {
-      padding-right: 13px;
-      text-align: right;
-    }
-
-    .prize-money-cell:nth-child(even) {
-      padding-left: 13px;
-      text-align: left;
-    }
-
-    .prize-money-column-heading {
-      font-size: .62rem;
-      font-weight: 600 !important;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .prize-money-value {
-      font-weight: 600 !important;
+      text-align: center;
       white-space: nowrap;
     }
 
-    @media (max-width: 520px) {
-      .prize-money-column-heading {
-        font-size: .6rem;
-        letter-spacing: .08em;
-      }
+    .prize-money-entry strong {
+      color: inherit !important;
+      font-weight: 600 !important;
+    }
 
-      .prize-money-cell {
+    @media (max-width: 520px) {
+      .prize-money-entry {
         font-size: .7rem;
       }
     }
@@ -3059,8 +3029,8 @@
     .registration-copy {
       margin: 0 0 7px;
       color: #006a39 !important;
-      font-size: .76rem;
-      line-height: 1.35;
+      font-size: .9rem;
+      line-height: 1.25;
     }
 
     .registration-link {
@@ -3431,7 +3401,20 @@
               <button class="route-download-button" id="routeDownload" type="button">DOWNLOAD</button>
             </div>
           </div>
-          <p class="route-kits-notice" style="color:#006a39 !important">Kits to be collected at Canon Buningwire Guest house on 11th Sept 2026</p>
+          <p class="route-kits-notice" style="color:#006a39 !important">Canon Buningwire will be the start / stop point.<br>(Kits to be collected at guest house on 11th sept 2026)</p>
+        </div>
+      </section>
+
+      <section class="panel registration-panel" aria-label="Registration">
+        <div class="registration-content">
+          <p class="registration-copy">Click the link below to register.</p>
+          <a
+            class="action registration-link"
+            href="https://forms.gle/sxGJs29JuXxcknZa8"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Register</a>
+          <p class="registration-deadline">Registration Deadline - August 21st 2026</p>
         </div>
       </section>
 
@@ -3443,24 +3426,16 @@
             <div class="prize-money-group">
               <h3 class="prize-money-distance">42km</h3>
               <div class="prize-money-table">
-                <span class="prize-money-cell prize-money-column-heading">Position</span>
-                <span class="prize-money-cell prize-money-column-heading">Prize Money</span>
-                <span class="prize-money-cell">1st</span>
-                <strong class="prize-money-cell prize-money-value">UGX 1,000,000</strong>
-                <span class="prize-money-cell">2nd</span>
-                <strong class="prize-money-cell prize-money-value">UGX 500,000</strong>
+                <p class="prize-money-entry">1st : <strong>Ugx 1,000,000</strong></p>
+                <p class="prize-money-entry">2nd : <strong>Ugx 500,000</strong></p>
               </div>
             </div>
 
             <div class="prize-money-group">
               <h3 class="prize-money-distance">21.2km</h3>
               <div class="prize-money-table">
-                <span class="prize-money-cell prize-money-column-heading">Position</span>
-                <span class="prize-money-cell prize-money-column-heading">Prize Money</span>
-                <span class="prize-money-cell">1st</span>
-                <strong class="prize-money-cell prize-money-value">UGX 500,000</strong>
-                <span class="prize-money-cell">2nd</span>
-                <strong class="prize-money-cell prize-money-value">UGX 250,000</strong>
+                <p class="prize-money-entry">1st : <strong>Ugx 500,000</strong></p>
+                <p class="prize-money-entry">2nd : <strong>Ugx 250,000</strong></p>
               </div>
             </div>
           </div>
@@ -3506,19 +3481,6 @@
               <p class="accommodation-breakfast">Inclusive of breakfast</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section class="panel registration-panel" aria-label="Registration">
-        <div class="registration-content">
-          <p class="registration-copy">Click the link below to register.</p>
-          <a
-            class="action registration-link"
-            href="https://forms.gle/sxGJs29JuXxcknZa8"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Register</a>
-          <p class="registration-deadline">Registration Deadline - August 21st 2026</p>
         </div>
       </section>
 
