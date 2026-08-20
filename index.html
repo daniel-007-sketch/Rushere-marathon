@@ -2099,7 +2099,7 @@
     html body .page-four-panel,
     html body .page-four-panel *,
     html body .route-maps-panel,
-    html body .route-maps-panel *,
+    html body .route-maps-panel *:not(.registration-block):not(.registration-block *),
     html body .photos-access-panel,
     html body .photos-access-panel *,
     html body .route-map-viewer,
@@ -2569,7 +2569,7 @@
     }
 
     /* Final site color palette. */
-    html body *:not(.hero-title):not(.hero-title *):not(.page-one-scroll-cue):not(.page-one-scroll-cue *):not(.route-map-message):not(.route-map-message *):not(.page-footer-signature):not(.page-footer-signature *):not(.accommodation-panel):not(.accommodation-panel *):not(.prize-money-panel):not(.prize-money-panel *):not(.registration-panel):not(.registration-panel *):not(button):not(.action):not(.route-map-action):not(.route-map-back):not(.route-distance-select):not(.route-download-button):not(.photos-access-button) {
+    html body *:not(.hero-title):not(.hero-title *):not(.page-one-scroll-cue):not(.page-one-scroll-cue *):not(.route-map-message):not(.route-map-message *):not(.page-footer-signature):not(.page-footer-signature *):not(.accommodation-panel):not(.accommodation-panel *):not(.prize-money-panel):not(.prize-money-panel *):not(.registration-block):not(.registration-block *):not(button):not(.action):not(.route-map-action):not(.route-map-back):not(.route-distance-select):not(.route-download-button):not(.photos-access-button) {
       color: #082314 !important;
     }
 
@@ -3016,14 +3016,7 @@
     }
 
     /* Registration link and deadline. */
-    .panel.registration-panel {
-      min-height: 0 !important;
-      height: auto !important;
-      padding: 0 !important;
-      background: transparent !important;
-    }
-
-    .registration-content {
+    .registration-block {
       width: min(100%, 620px);
       margin: auto;
       padding: 16px clamp(18px, 5vw, 28px) 18px !important;
@@ -3406,19 +3399,17 @@
             </div>
           </div>
           <p class="route-kits-notice" style="color:#006a39 !important">Canon Buningwire will be the start / stop point.<br>(Kits to be collected at guest house on 11th sept 2026)</p>
-        </div>
-      </section>
 
-      <section class="panel registration-panel" aria-label="Registration">
-        <div class="registration-content">
-          <p class="registration-copy">Click the link below to register.</p>
-          <a
-            class="action registration-link"
-            href="https://forms.gle/sxGJs29JuXxcknZa8"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Register</a>
-          <p class="registration-deadline">Registration Deadline - August 21st 2026</p>
+          <div class="registration-block" role="group" aria-label="Registration">
+            <p class="registration-copy">Click the link below to register.</p>
+            <a
+              class="action registration-link"
+              href="https://forms.gle/sxGJs29JuXxcknZa8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Register</a>
+            <p class="registration-deadline">Registration Deadline - August 21st 2026</p>
+          </div>
         </div>
       </section>
 
@@ -3430,16 +3421,16 @@
             <div class="prize-money-group">
               <h3 class="prize-money-distance">42km</h3>
               <div class="prize-money-table">
-                <p class="prize-money-entry">1st : <strong>Ugx 1,000,000</strong></p>
-                <p class="prize-money-entry">2nd : <strong>Ugx 500,000</strong></p>
+                <p class="prize-money-entry">1st position: <strong>Ugx 1,000,000</strong></p>
+                <p class="prize-money-entry">2nd position: <strong>Ugx 500,000</strong></p>
               </div>
             </div>
 
             <div class="prize-money-group">
               <h3 class="prize-money-distance">21.2km</h3>
               <div class="prize-money-table">
-                <p class="prize-money-entry">1st : <strong>Ugx 500,000</strong></p>
-                <p class="prize-money-entry">2nd : <strong>Ugx 250,000</strong></p>
+                <p class="prize-money-entry">1st position: <strong>Ugx 500,000</strong></p>
+                <p class="prize-money-entry">2nd position: <strong>Ugx 250,000</strong></p>
               </div>
             </div>
           </div>
