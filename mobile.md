@@ -55,10 +55,8 @@ Desktop-specific presentation changes begin at `521px` and `700px`. Avoid adding
 - Hover-only styles are contained in `@media (hover: hover)` so they do not remain stuck after touchscreen taps.
 - Do not place important controls too close to the screen edge or to each other.
 
-## Audio and media
+## Media
 
-- The floating music control must remain visible and reachable on small screens.
-- Audio autoplay may be blocked by iOS Safari and Chrome on Android; playback must still work after user interaction.
 - The opening visual should cover the viewport without producing horizontal scrolling.
 - Large media assets should be compressed before publishing to reduce loading time on mobile data.
 
@@ -84,7 +82,6 @@ Desktop-specific presentation changes begin at `521px` and `700px`. Avoid adding
 - [ ] Confirm both popups fit on-screen in portrait and landscape orientations.
 - [ ] Confirm popup backdrop taps, back buttons, and Escape close the correct popup.
 - [ ] Confirm keyboard focus returns to the button that opened the popup.
-- [ ] Confirm the music button is reachable and audio can start after a tap.
 - [ ] Confirm the page remains usable with reduced motion enabled.
 - [ ] Test in iOS Safari and Chrome on Android.
 

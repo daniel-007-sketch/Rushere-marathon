@@ -1466,49 +1466,6 @@
     }
 
 
-    /* =========================================================
-       MUSIC BUTTON
-    ========================================================= */
-
-    .music-button {
-
-      position: fixed;
-
-      right: 20px;
-      bottom: 20px;
-
-      right:
-        max(20px, env(safe-area-inset-right));
-
-      bottom:
-        max(20px, env(safe-area-inset-bottom));
-
-
-      z-index: 20;
-
-      width: 52px;
-
-      aspect-ratio: 1;
-
-      display: none;
-
-      place-items: center;
-
-      border: 0;
-
-      border-radius: 50%;
-
-      color: #ffffff;
-
-      background:
-        var(--cnc-blue);
-
-      box-shadow:
-        0 9px 25px
-        rgba(23,148,203,.30);
-    }
-
-
     /* Match the Rushere Marathon title font throughout the invitation. */
     body *:not(.page-footer):not(.page-footer *) {
       font-family: Anton, Impact, sans-serif !important;
@@ -2036,15 +1993,6 @@
       }
     }
 
-    .music-button {
-      display: grid !important; place-items: center !important; visibility: visible !important; opacity: 1 !important;
-      position: fixed !important; right: max(20px, env(safe-area-inset-right)) !important;
-      bottom: max(20px, env(safe-area-inset-bottom)) !important; z-index: 9999 !important;
-      color: #fff !important; background: #47b24a !important; font-size: 0 !important;
-      pointer-events: auto !important;
-    }
-    .music-button::before { content: ""; width: 27px; height: 27px; background: center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='13' cy='4' r='2'/%3E%3Cpath d='m7 21 3-5 2-4 3 3 2 6M6 12l4-3 3 1 4-2M10 9l-2 5-4 2'/%3E%3C/svg%3E"); }
-
     .route-maps-panel { min-height: 630px; padding: clamp(42px,8vw,72px) clamp(18px,5vw,42px) !important; background: transparent !important; }
     .route-maps-content { width: min(100%, calc(310px + clamp(32px, 10vw, 56px))); margin: auto; background: transparent; }
     .route-maps-panel, .route-maps-panel * { font-family: "Futura Condensed", "Futura-CondensedMedium", "Arial Narrow", sans-serif !important; font-weight: 400 !important; }
@@ -2080,7 +2028,7 @@
     .photos-access-panel, .photos-access-panel * { color: #000 !important; font-family: "Futura Condensed", "Futura-CondensedMedium", "Arial Narrow", sans-serif !important; font-weight: 400 !important; }
     .photos-access-title { margin: 0 0 8px; font-size: clamp(1.45rem,5vw,2rem); line-height: 1; }
     .photos-access-copy { margin: 0 auto 16px; font-size: .9rem; line-height: 1.25; }
-    .photos-access-button { margin-top: 0 !important; border-color: var(--wine) !important; color: #000 !important; background: transparent !important; }
+    .photos-access-button { margin-top: 0 !important; border-color: var(--wine) !important; color: #000 !important; background: #f1f1f1 !important; }
 
     /* Screenshot-matched vertical rhythm with progressively tighter cards. */
     .panel.page-four-panel {
@@ -2160,11 +2108,6 @@
     html body .page-footer * {
       color: #000000 !important;
       font-family: Montserrat, Arial, sans-serif !important;
-    }
-
-    .music-button,
-    .music-button * {
-      color: #ffffff !important;
     }
 
     button,
@@ -2477,7 +2420,7 @@
       max-width: 280px;
     }
 
-    button:not(.music-button),
+    button,
     .action,
     .route-distance-select {
       border-color: #b8bdb7 !important;
@@ -2582,7 +2525,7 @@
     }
 
     @media (hover: hover) {
-      html body button:not(.music-button):hover,
+      html body button:hover,
       html body .action:hover,
       html body .route-map-action:hover,
       html body .route-map-back:hover,
@@ -2590,7 +2533,7 @@
         color: #e5eedf !important;
       }
 
-      html body button:not(.music-button):hover *,
+      html body button:hover *,
       html body .action:hover * {
         color: #e5eedf !important;
       }
@@ -2622,7 +2565,7 @@
     }
 
     /* Final site color palette. */
-    html body *:not(.hero-title):not(.hero-title *):not(.page-one-scroll-cue):not(.page-one-scroll-cue *):not(.route-map-message):not(.route-map-message *):not(.page-footer-signature):not(.page-footer-signature *):not(.accommodation-panel):not(.accommodation-panel *):not(button):not(.action):not(.route-map-action):not(.route-map-back):not(.route-distance-select):not(.route-download-button):not(.photos-access-button):not(.music-button) {
+    html body *:not(.hero-title):not(.hero-title *):not(.page-one-scroll-cue):not(.page-one-scroll-cue *):not(.route-map-message):not(.route-map-message *):not(.page-footer-signature):not(.page-footer-signature *):not(.accommodation-panel):not(.accommodation-panel *):not(.prize-money-panel):not(.prize-money-panel *):not(.registration-panel):not(.registration-panel *):not(button):not(.action):not(.route-map-action):not(.route-map-back):not(.route-distance-select):not(.route-download-button):not(.photos-access-button) {
       color: #082314 !important;
     }
 
@@ -2637,18 +2580,6 @@
 
     html body .hero-title .hero-title-marathon {
       color: #47B24A !important;
-    }
-
-    html body .music-button {
-      background: #006a39 !important;
-      border-color: #006a39 !important;
-    }
-
-    @media (hover: hover) {
-      html body .music-button:hover {
-        background: #006a39 !important;
-        border-color: #006a39 !important;
-      }
     }
 
     .route-map-display {
@@ -2676,7 +2607,7 @@
     }
 
     @media (hover: hover) {
-      html body button:not(.music-button):hover,
+      html body button:hover,
       html body .action:hover,
       html body .route-map-action:hover,
       html body .route-map-back:hover,
@@ -2727,7 +2658,7 @@
       color: #006a39 !important;
     }
 
-    html body button:not(.music-button):not(.route-map-back),
+    html body button:not(.route-map-back),
     html body .action,
     html body .route-map-action,
     html body .route-distance-select,
@@ -2788,6 +2719,89 @@
       border: 1px solid #b8bdb7;
       border-radius: 10px;
       background: rgba(255, 255, 255, .74);
+    }
+
+    /* Prize money uses the Accommodation panel's layout and visual system. */
+    .panel.prize-money-panel {
+      min-height: 0 !important;
+      height: auto !important;
+      padding: 0 !important;
+      background: transparent !important;
+    }
+
+    .prize-money-shell {
+      background: var(--page-background);
+    }
+
+    .prize-money-group {
+      padding: 13px;
+    }
+
+    .prize-money-group + .prize-money-group {
+      border-top: 1px solid #b8bdb7;
+    }
+
+    .prize-money-distance {
+      margin: 0 0 10px;
+      color: #006a39 !important;
+      font-size: .92rem;
+      font-weight: 600 !important;
+      line-height: 1.2;
+    }
+
+    .prize-money-positions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .prize-money-position {
+      display: grid;
+      grid-template-rows: auto 40px;
+      gap: 7px;
+      min-width: 0;
+      text-align: left;
+    }
+
+    .prize-money-position span {
+      color: #006a39 !important;
+      font-size: .62rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .prize-money-position:last-child span {
+      text-align: right;
+    }
+
+    .prize-money-position strong {
+      display: flex;
+      min-height: 40px;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      border: 1px solid #b8bdb7;
+      border-radius: 999px;
+      color: #006a39 !important;
+      background: #f1f1f1;
+      font-size: .82rem;
+      font-weight: 600 !important;
+      line-height: 1.2;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 520px) {
+      .prize-money-position span {
+        font-size: .6rem;
+        letter-spacing: .08em;
+      }
+
+      .prize-money-position strong {
+        padding-inline: 8px;
+        font-size: .72rem;
+      }
     }
 
     .accommodation-gallery {
@@ -2969,6 +2983,23 @@
       text-align: left;
     }
 
+    .accommodation-contact {
+      grid-column: 1;
+      grid-row: 2;
+      margin: -1px 0 0;
+      color: #006a39 !important;
+      font-size: .68rem;
+      line-height: 1.35;
+      text-align: left;
+    }
+
+    .accommodation-contact a {
+      color: inherit !important;
+      font-weight: 600 !important;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
     @media (max-width: 520px) {
       .accommodation-controls {
         grid-template-columns: minmax(0, 1fr) auto;
@@ -2998,6 +3029,78 @@
       }
 
       .accommodation-breakfast {
+        font-size: .63rem;
+      }
+
+      .accommodation-contact {
+        font-size: .63rem;
+      }
+    }
+
+    /* Registration link and deadline. */
+    .panel.registration-panel {
+      min-height: 0 !important;
+      height: auto !important;
+      padding: 0 !important;
+      background: transparent !important;
+    }
+
+    .registration-content {
+      width: min(100%, 620px);
+      margin: auto;
+      padding: 16px clamp(18px, 5vw, 28px) 18px !important;
+      text-align: center;
+    }
+
+    .registration-title {
+      margin: 0 0 4px;
+      color: #006a39 !important;
+      font-size: clamp(1.45rem, 5vw, 2rem);
+      line-height: 1.1;
+    }
+
+    .registration-copy {
+      margin: 0 0 7px;
+      color: #006a39 !important;
+      font-size: .76rem;
+      line-height: 1.35;
+    }
+
+    .registration-link {
+      display: inline-flex;
+      min-height: 40px;
+      max-width: 100%;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 8px 16px;
+      border: 1px solid #b8bdb7;
+      border-radius: 999px;
+      color: #006a39 !important;
+      background: #f1f1f1;
+      font-size: .68rem;
+      font-weight: 600 !important;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+      text-decoration: none;
+    }
+
+    .registration-link:focus-visible {
+      outline: 2px solid #006a39;
+      outline-offset: 2px;
+    }
+
+    .registration-deadline {
+      margin: 6px 0 0;
+      color: #006a39 !important;
+      font-size: .68rem;
+      font-weight: 600 !important;
+      line-height: 1.35;
+    }
+
+    @media (max-width: 520px) {
+      .registration-link,
+      .registration-deadline {
         font-size: .63rem;
       }
     }
@@ -3347,6 +3450,42 @@
         </div>
       </section>
 
+      <section class="panel prize-money-panel" aria-labelledby="prizeMoneyTitle">
+        <div class="accommodation-content prize-money-content">
+          <h2 class="accommodation-title" id="prizeMoneyTitle">Prize Money</h2>
+
+          <div class="accommodation-shell prize-money-shell">
+            <div class="prize-money-group">
+              <h3 class="prize-money-distance">42km</h3>
+              <div class="prize-money-positions">
+                <div class="prize-money-position">
+                  <span>1st position</span>
+                  <strong>UGX 1,000,000</strong>
+                </div>
+                <div class="prize-money-position">
+                  <span>2nd position</span>
+                  <strong>UGX 500,000</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="prize-money-group">
+              <h3 class="prize-money-distance">21.2km</h3>
+              <div class="prize-money-positions">
+                <div class="prize-money-position">
+                  <span>1st position</span>
+                  <strong>UGX 500,000</strong>
+                </div>
+                <div class="prize-money-position">
+                  <span>2nd position</span>
+                  <strong>UGX 250,000</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="panel accommodation-panel" aria-labelledby="accommodationTitle">
         <div class="accommodation-content">
           <h2 class="accommodation-title" id="accommodationTitle">Accommodation</h2>
@@ -3374,6 +3513,10 @@
                 </select>
               </label>
 
+              <p class="accommodation-contact" aria-live="polite">
+                Contact: <a id="accommodationContact" href="tel:0000000000">0000000000</a>
+              </p>
+
               <div class="accommodation-price-wrap" aria-live="polite">
                 <span class="accommodation-price-label">Price</span>
                 <strong class="accommodation-price" id="accommodationPrice">UGX 60,000</strong>
@@ -3382,6 +3525,20 @@
               <p class="accommodation-breakfast">Inclusive of breakfast</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="panel registration-panel" aria-labelledby="registrationTitle">
+        <div class="registration-content">
+          <h2 class="registration-title" id="registrationTitle">Registration</h2>
+          <p class="registration-copy">Click the link below to register.</p>
+          <a
+            class="registration-link"
+            href="https://forms.gle/sxGJs29JuXxcknZa8"
+            target="_blank"
+            rel="noopener noreferrer"
+          >https://forms.gle/sxGJs29JuXxcknZa8</a>
+          <p class="registration-deadline">Registration Deadline - August 21st 2026</p>
         </div>
       </section>
 
@@ -3425,30 +3582,6 @@
       <p class="page-footer-signature">DESIGN BY KAIZEN</p>
     </div>
   </footer>
-
-
-  <!-- =======================================================
-       MUSIC BUTTON
-  ======================================================== -->
-
-  <button
-    class="music-button"
-    id="musicButton"
-    type="button"
-    aria-label="Play music"
-  >
-    &#9835;
-  </button>
-
-
-  <audio
-    id="music"
-    autoplay
-    loop
-    playsinline
-    preload="auto"
-    src="./Afrola - Bird Creek.mp3"
-  ></audio>
 
 
   <!-- =======================================================
@@ -3738,102 +3871,6 @@
     );
 
 
-    /* =======================================================
-       MUSIC
-    ======================================================== */
-
-    const musicButton =
-      document.getElementById(
-        "musicButton"
-      );
-
-    const music =
-      document.getElementById(
-        "music"
-      );
-
-    async function startMusic() {
-
-      if (!music) {
-        return;
-      }
-
-      try {
-
-        await music.play();
-
-        musicButton.setAttribute(
-          "aria-label",
-          "Pause music"
-        );
-
-      }
-
-      catch (error) {
-
-        /*
-          Some browsers can still block automatic playback.
-          In that case the music button remains available.
-        */
-
-        musicButton.setAttribute(
-          "aria-label",
-          "Play music"
-
-        );
-
-      }
-
-    }
-
-
-    musicButton.addEventListener(
-      "click",
-      async () => {
-
-
-        /*
-          If you have not added the
-          audio element yet.
-        */
-
-        if (!music) {
-
-          alert(
-            "The background music file could not be loaded."
-          );
-
-          return;
-        }
-
-
-        /* Play music */
-
-        if (music.paused) {
-
-          await startMusic();
-
-        }
-
-
-        /* Pause music */
-
-        else {
-
-          music.pause();
-
-          musicButton.setAttribute(
-            "aria-label",
-            "Play music"
-          );
-
-          music.currentTime = 0;
-
-        }
-
-      }
-    );
-
     const routeDistance = document.getElementById("routeDistance");
     const routeDownload = document.getElementById("routeDownload");
     const routeMapDisplay = document.getElementById("routeMapDisplay");
@@ -3888,6 +3925,7 @@
       "canon-buningwire": {
         name: "Canon Buningwire",
         price: "UGX 60,000",
+        contact: "0000000000",
         photos: [
           "images/accommodation/canon-1.webp",
           "images/accommodation/canon-2.webp",
@@ -3897,8 +3935,9 @@
       "step-in-lodge": {
         name: "Step in lodge",
         price: "UGX 40,000",
+        contact: "1000000000",
         photos: [
-          "images/accommodation/multi-1.webp",
+          "images/accommodation/multi-4.webp",
           "images/accommodation/multi-2.webp",
           "images/accommodation/multi-3.webp"
         ]
@@ -3906,6 +3945,7 @@
       "ihunde-farm-lodge": {
         name: "Ihunde farm lodge",
         price: "UGX 200,000",
+        contact: "0790000040",
         photos: [
           "images/accommodation/ihunde-1.webp",
           "images/accommodation/ihunde-2.webp",
@@ -3921,6 +3961,7 @@
     const accommodationPlaceholderSlot = document.getElementById("accommodationPlaceholderSlot");
     const accommodationCounter = document.getElementById("accommodationCounter");
     const accommodationPrice = document.getElementById("accommodationPrice");
+    const accommodationContact = document.getElementById("accommodationContact");
     const accommodationPrevious = document.getElementById("accommodationPrevious");
     const accommodationNext = document.getElementById("accommodationNext");
     let accommodationPhotoIndex = 0;
@@ -3931,6 +3972,8 @@
       const photoNumber = accommodationPhotoIndex + 1;
 
       accommodationPrice.textContent = selectedPackage.price;
+      accommodationContact.textContent = selectedPackage.contact;
+      accommodationContact.href = `tel:${selectedPackage.contact}`;
       accommodationCounter.textContent = `${photoNumber} / ${selectedPackage.photos.length}`;
       accommodationPlaceholderTitle.textContent = selectedPackage.name;
       accommodationPlaceholderSlot.textContent = `Photo ${photoNumber} upload pending`;
@@ -4032,22 +4075,6 @@
     window.addEventListener("keydown", (event) => {
       if (event.key === "ArrowRight" || event.key === " ") advanceHero();
     });
-
-    /* Restore the original automatic music attempt. */
-    startMusic();
-
-    music.addEventListener("canplay", startMusic, { once: true });
-    window.addEventListener("load", startMusic, { once: true });
-    music.load();
-
-    /* Retry after the first interaction when a browser blocks audible autoplay. */
-    function retryMusicAfterInteraction() {
-      if (music && music.paused) startMusic();
-    }
-
-    document.addEventListener("pointerdown", retryMusicAfterInteraction, { once: true, passive: true });
-    document.addEventListener("keydown", retryMusicAfterInteraction, { once: true });
-
 
   </script>
 
