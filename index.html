@@ -2730,15 +2730,18 @@
     }
 
     .prize-money-shell {
-      background: var(--page-background);
+      overflow: visible;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
     }
 
     .prize-money-group {
-      padding: 13px;
+      padding: 12px 0;
     }
 
     .prize-money-group + .prize-money-group {
-      border-top: 1px solid #b8bdb7;
+      margin-top: 14px;
     }
 
     .prize-money-distance {
@@ -2749,58 +2752,59 @@
       line-height: 1.2;
     }
 
-    .prize-money-positions {
+    .prize-money-table {
+      position: relative;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
+      row-gap: 8px;
     }
 
-    .prize-money-position {
-      display: grid;
-      grid-template-rows: auto 40px;
-      gap: 7px;
-      min-width: 0;
-      text-align: left;
+    .prize-money-table::before {
+      position: absolute;
+      inset-block: 0;
+      left: 50%;
+      width: 1px;
+      background: rgba(122, 31, 43, 0.38);
+      content: "";
+      transform: translateX(-50%);
     }
 
-    .prize-money-position span {
+    .prize-money-cell {
       color: #006a39 !important;
-      font-size: .62rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      white-space: nowrap;
+      font-size: .78rem;
+      line-height: 1.35;
     }
 
-    .prize-money-position:last-child span {
+    .prize-money-cell:nth-child(odd) {
+      padding-right: 13px;
       text-align: right;
     }
 
-    .prize-money-position strong {
-      display: flex;
-      min-height: 40px;
-      align-items: center;
-      justify-content: center;
-      padding: 8px 12px;
-      border: 1px solid #b8bdb7;
-      border-radius: 999px;
-      color: #006a39 !important;
-      background: #f1f1f1;
-      font-size: .82rem;
+    .prize-money-cell:nth-child(even) {
+      padding-left: 13px;
+      text-align: left;
+    }
+
+    .prize-money-column-heading {
+      font-size: .62rem;
       font-weight: 600 !important;
-      line-height: 1.2;
-      text-align: center;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .prize-money-value {
+      font-weight: 600 !important;
       white-space: nowrap;
     }
 
     @media (max-width: 520px) {
-      .prize-money-position span {
+      .prize-money-column-heading {
         font-size: .6rem;
         letter-spacing: .08em;
       }
 
-      .prize-money-position strong {
-        padding-inline: 8px;
-        font-size: .72rem;
+      .prize-money-cell {
+        font-size: .7rem;
       }
     }
 
@@ -3052,13 +3056,6 @@
       text-align: center;
     }
 
-    .registration-title {
-      margin: 0 0 4px;
-      color: #006a39 !important;
-      font-size: clamp(1.45rem, 5vw, 2rem);
-      line-height: 1.1;
-    }
-
     .registration-copy {
       margin: 0 0 7px;
       color: #006a39 !important;
@@ -3067,22 +3064,11 @@
     }
 
     .registration-link {
-      display: inline-flex;
-      min-height: 40px;
+      margin-top: 0;
       max-width: 100%;
-      align-items: center;
-      justify-content: center;
-      box-sizing: border-box;
-      padding: 8px 16px;
-      border: 1px solid #b8bdb7;
-      border-radius: 999px;
       color: #006a39 !important;
       background: #f1f1f1;
-      font-size: .68rem;
-      font-weight: 600 !important;
-      line-height: 1.35;
       overflow-wrap: anywhere;
-      text-decoration: none;
     }
 
     .registration-link:focus-visible {
@@ -3099,7 +3085,6 @@
     }
 
     @media (max-width: 520px) {
-      .registration-link,
       .registration-deadline {
         font-size: .63rem;
       }
@@ -3454,32 +3439,28 @@
         <div class="accommodation-content prize-money-content">
           <h2 class="accommodation-title" id="prizeMoneyTitle">Prize Money</h2>
 
-          <div class="accommodation-shell prize-money-shell">
+          <div class="prize-money-shell">
             <div class="prize-money-group">
               <h3 class="prize-money-distance">42km</h3>
-              <div class="prize-money-positions">
-                <div class="prize-money-position">
-                  <span>1st position</span>
-                  <strong>UGX 1,000,000</strong>
-                </div>
-                <div class="prize-money-position">
-                  <span>2nd position</span>
-                  <strong>UGX 500,000</strong>
-                </div>
+              <div class="prize-money-table">
+                <span class="prize-money-cell prize-money-column-heading">Position</span>
+                <span class="prize-money-cell prize-money-column-heading">Prize Money</span>
+                <span class="prize-money-cell">1st</span>
+                <strong class="prize-money-cell prize-money-value">UGX 1,000,000</strong>
+                <span class="prize-money-cell">2nd</span>
+                <strong class="prize-money-cell prize-money-value">UGX 500,000</strong>
               </div>
             </div>
 
             <div class="prize-money-group">
               <h3 class="prize-money-distance">21.2km</h3>
-              <div class="prize-money-positions">
-                <div class="prize-money-position">
-                  <span>1st position</span>
-                  <strong>UGX 500,000</strong>
-                </div>
-                <div class="prize-money-position">
-                  <span>2nd position</span>
-                  <strong>UGX 250,000</strong>
-                </div>
+              <div class="prize-money-table">
+                <span class="prize-money-cell prize-money-column-heading">Position</span>
+                <span class="prize-money-cell prize-money-column-heading">Prize Money</span>
+                <span class="prize-money-cell">1st</span>
+                <strong class="prize-money-cell prize-money-value">UGX 500,000</strong>
+                <span class="prize-money-cell">2nd</span>
+                <strong class="prize-money-cell prize-money-value">UGX 250,000</strong>
               </div>
             </div>
           </div>
@@ -3528,16 +3509,15 @@
         </div>
       </section>
 
-      <section class="panel registration-panel" aria-labelledby="registrationTitle">
+      <section class="panel registration-panel" aria-label="Registration">
         <div class="registration-content">
-          <h2 class="registration-title" id="registrationTitle">Registration</h2>
           <p class="registration-copy">Click the link below to register.</p>
           <a
-            class="registration-link"
+            class="action registration-link"
             href="https://forms.gle/sxGJs29JuXxcknZa8"
             target="_blank"
             rel="noopener noreferrer"
-          >https://forms.gle/sxGJs29JuXxcknZa8</a>
+          >Register</a>
           <p class="registration-deadline">Registration Deadline - August 21st 2026</p>
         </div>
       </section>
