@@ -2652,6 +2652,46 @@
       color: #006a39 !important;
     }
 
+    @media (hover: hover) {
+      html body .route-maps-panel #routeDistance:hover {
+        color: #f1f1f1 !important;
+        background-image:
+          linear-gradient(45deg, transparent 50%, #f1f1f1 50%),
+          linear-gradient(135deg, #f1f1f1 50%, transparent 50%);
+      }
+
+      html body .accommodation-panel #accommodationSelect:hover {
+        color: #f1f1f1 !important;
+        background-image:
+          linear-gradient(45deg, transparent 50%, #f1f1f1 50%),
+          linear-gradient(135deg, #f1f1f1 50%, transparent 50%);
+      }
+    }
+
+    html body .route-maps-panel #routeDistance:focus,
+    html body .route-maps-panel #routeDistance:focus-visible,
+    html body .accommodation-panel #accommodationSelect:focus,
+    html body .accommodation-panel #accommodationSelect:focus-visible {
+      color: #f1f1f1 !important;
+      background-color: #006a39 !important;
+      border-color: #006a39 !important;
+      background-image:
+        linear-gradient(45deg, transparent 50%, #f1f1f1 50%),
+        linear-gradient(135deg, #f1f1f1 50%, transparent 50%);
+    }
+
+    @supports selector(select:open) {
+      html body .route-maps-panel #routeDistance:open,
+      html body .accommodation-panel #accommodationSelect:open {
+        color: #f1f1f1 !important;
+        background-color: #006a39 !important;
+        border-color: #006a39 !important;
+        background-image:
+          linear-gradient(45deg, transparent 50%, #f1f1f1 50%),
+          linear-gradient(135deg, #f1f1f1 50%, transparent 50%);
+      }
+    }
+
     html body .invitation .paper-scroll a.action.google-maps-button:hover,
     html body .invitation .paper-scroll a.action.google-maps-button:focus-visible,
     html body .invitation .paper-scroll a.action.photos-access-button:hover,
@@ -2816,13 +2856,13 @@
       z-index: 2;
       display: grid;
       place-items: center;
-      width: 38px;
-      height: 52px;
+      width: 40px;
+      height: 40px;
       padding: 0;
-      border: 1px solid rgba(229, 238, 223, .72) !important;
-      border-radius: 0;
+      border: 1px solid rgba(229, 238, 223, .45) !important;
+      border-radius: 50%;
       color: #e5eedf !important;
-      background: rgba(8, 35, 20, .5) !important;
+      background: rgba(8, 35, 20, .28) !important;
       font-size: 1.6rem;
       line-height: 1;
       transform: translateY(-50%);
@@ -2837,13 +2877,11 @@
     }
 
     html body #accommodationGallery .accommodation-arrow--previous {
-      left: 0;
-      border-left: 0 !important;
+      left: 10px;
     }
 
     html body #accommodationGallery .accommodation-arrow--next {
-      right: 0;
-      border-right: 0 !important;
+      right: 10px;
     }
 
     .accommodation-counter {
@@ -2892,6 +2930,10 @@
       max-width: none !important;
       min-height: 40px !important;
       padding: 7px 36px 7px 13px !important;
+      font-size: .92rem;
+    }
+
+    #routeDistance {
       font-size: .92rem;
     }
 
@@ -2969,6 +3011,10 @@
         width: 100% !important;
         max-width: none !important;
         padding-inline: 11px 28px !important;
+        font-size: .78rem;
+      }
+
+      #routeDistance {
         font-size: .78rem;
       }
 
@@ -3436,7 +3482,7 @@
 
             <div class="accommodation-controls">
               <label class="accommodation-field" for="accommodationSelect">
-                <span>Stay View</span>
+                <span>View Stay</span>
                 <select class="route-distance-select accommodation-select" id="accommodationSelect">
                   <option value="canon-buningwire">Canon Buningwire</option>
                   <option value="step-in-lodge">Step in lodge</option>
